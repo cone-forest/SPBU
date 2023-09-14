@@ -1,0 +1,236 @@
+\documentclass[a4paper, 12pt]{article}
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0in}
+
+\usepackage[T2A]{fontenc}% Внутренняя T2A кодировка TeX
+\usepackage[utf8]{inputenc}% кодировка файла
+\usepackage[russian]{babel}% поддержка переносов в русском языке
+\usepackage{amsthm, amsmath, amssymb} % Mathematical typesetting
+\usepackage{float} % Improved interface for floating objects
+\usepackage{graphicx, multicol} % Enhanced support for graphics
+\usepackage{xcolor} % Driver-independent color extensions
+\usepackage{mdframed}
+
+\usepackage[yyyymmdd]{datetime} % Uses YEAR-MONTH-DAY format for dates
+\renewcommand{\dateseparator}{.} % Sets dateseparator to '.'
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{}\renewcommand{\headrulewidth}{0pt} % Blank out the default header
+\fancyfoot[L]{} % Custom footer text
+\fancyfoot[C]{} % Custom footer text
+\fancyfoot[R]{\thepage} % Custom footer text
+
+\newenvironment{problem}[2][Задача]
+    { \begin{mdframed}[backgroundcolor=gray!10] \textbf{#1 #2.} \\}
+    {  \end{mdframed}}
+
+\newenvironment{solution}
+    {\textit{Решение: }}
+    {\noindent\rule{7in}{1.5pt}}
+
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\fancyhead[C]{}
+\hrule \medskip % Upper rule
+\begin{minipage}{0.295\textwidth} 
+\raggedright\footnotesize
+Михаил Цуканов \hfill\\   
+st117303 \hfill\\
+st117303@student.spbu.ru
+\end{minipage}
+\begin{minipage}{0.4\textwidth} 
+\centering\large 
+Homework Assignment 1\\ 
+\normalsize 
+Алгебра и геометрия, 1 семестр\\ 
+\end{minipage}
+\begin{minipage}{0.295\textwidth} 
+\raggedleft
+\today\hfill\\
+\end{minipage}
+\medskip\hrule 
+\bigskip
+
+%------------------------------------------------
+%	CONTENTS
+%------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 1
+\begin{problem}{102}
+Вычислить $(x-1-i)(x-1+i)(x+1+i)(x+1-i)$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+$
+(x - (1 + i))(x - (1 - i))(x + (1 + i))(x + (1 - i)) = \\
+(x - (1 + i))(x + (1 + i))(x + (1 - i))(x - (1 - i)) = \\
+(x^2 - (1 + i)^2)(x^2 - (1 - i)^2) = \\
+(x^2 - 2i)(x^2 + 2i) = \\
+(x^4 + 4) \\
+$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 2
+\begin{problem}{105(c)}
+Вычислить $(1+2i)^5-(1-2i)^5$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+$
+(1 + 2i)^5 - (1 - 2i)^5 = \\
+(1 + 2i)^5 - (1 - 2i)^5 = \\
+(1 + 5*2i + 10*-4 + 10*-8i + 5*16 + 1*32i) - (1 + 5*-2i + 10*-4 + 10*8i + 5*16 + 1*-32i) = \\
+(1 + 10i - 40 - 80i + 80 + 32i) - (1 - 10i - 40 + 80i + 80 - 32i) = \\
+(41 - 38i) - (41 + 38i) = \\
+-76i \\
+$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 3
+\begin{problem}{107(d)}
+Вычислить $\displaystyle\frac{(1-i)^5-1}{(1+i)^5+1}$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+$
+\displaystyle\frac{(1 - i)^5 - 1}{(1 + i)^5 + 1} = \\
+$
+\\
+По треугольнику паскаля, как и в прошлом задании
+\\
+$
+\displaystyle\frac{(-4 + 4i) - 1}{(-4 - 4i) + 1} = 
+\displaystyle\frac{-5 + 4i}{-3 - 4i} = 
+\displaystyle\frac{5 - 4i}{3 + 4i} = 
+\displaystyle\frac{(5 - 4i)(3 - 4i)}{25} = 
+\displaystyle\frac{((4 - 4i) + 1)((4 - 4i) - 1)}{25} = \\
+\displaystyle\frac{16(1 - i)^2 - 1}{25} = 
+\displaystyle\frac{16 * -2i - 1}{25} = 
+\displaystyle\frac{-32i - 1}{25} = 
+-\displaystyle\frac{1 + 32i}{25} = 
+-\displaystyle\frac{1}{25} - \displaystyle\frac{32i}{25} 
+$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 4
+\begin{problem}{108(b)}
+Решить систему уравнений
+$$
+\left\{ 
+\begin{aligned}
+  (2+i)x+(2-i)y &=6,\\
+  (3+2i)x+(3-2i)y &=8.
+\end{aligned}
+\right.
+$$
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+\left\{ 
+\begin{aligned}
+  (2 + i)x + (2 - i)y &= 6, | * (3 + 2i) \\
+  (3 + 2i)x + (3 - 2i)y &= 8, | * (2 + i)
+\end{aligned}
+\right 
+\\
+
+Вычитаем из первого второе
+
+$
+  ((2 - i)(3 + 2i) - (3 - 2i)(2 + i))y = -2 \\
+  ((8 + i) - (8 - i))y = -2 \\
+  2iy = -2 \\
+  y = i \\
+$
+
+\left\{ 
+\begin{aligned}
+  (2 + i)x + (2 - i)y &= 6 \\
+  y &= i
+\end{aligned}
+\right 
+
+\left\{ 
+\begin{aligned}
+  (2 + i)x + 2i + 1 &= 6 \\
+  y &= i
+\end{aligned}
+\right 
+
+$
+\\
+(2 + i)x = 5 - 2i \\
+x = \displaystyle\frac{5 - 2i}{2 + i} = \displaystyle\frac{(5 - 2i)(2 - i)}{5} = \displaystyle\frac{8 - 9i}{5} = \displaystyle\frac{8}{5} - \displaystyle\frac{9i}{5}
+\\
+$
+
+Итого \\
+
+\left\{ 
+\begin{aligned}
+  x &= \displaystyle\frac{8}{5} - \displaystyle\frac{9i}{5} \\
+  y &= i
+\end{aligned}
+\right 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 5
+\begin{problem}{112(b, g)}
+Вычислить: b) $\sqrt{-8i}$, g) $\sqrt{2-3i}$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 6
+\begin{problem}{113(b)}
+Решить уравнение $x^2-(3-2i)x+(5-5i)=0$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+%------------------------------------------------
+\end{document}

@@ -1,0 +1,197 @@
+\documentclass[a4paper, 12pt]{article}
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0in}
+
+\usepackage[T2A]{fontenc}% Внутренняя T2A кодировка TeX
+\usepackage[utf8]{inputenc}% кодировка файла
+\usepackage[russian]{babel}% поддержка переносов в русском языке
+\usepackage{amsthm, amsmath, amssymb} % Mathematical typesetting
+\usepackage{float} % Improved interface for floating objects
+\usepackage{graphicx, multicol} % Enhanced support for graphics
+\usepackage{xcolor} % Driver-independent color extensions
+\usepackage{mdframed}
+
+\usepackage[yyyymmdd]{datetime} % Uses YEAR-MONTH-DAY format for dates
+\renewcommand{\dateseparator}{.} % Sets dateseparator to '.'
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{}\renewcommand{\headrulewidth}{0pt} % Blank out the default header
+\fancyfoot[L]{} % Custom footer text
+\fancyfoot[C]{} % Custom footer text
+\fancyfoot[R]{\thepage} % Custom footer text
+
+% команды для определения списка литературы.
+\renewenvironment{thebibliography}{\vskip12pt\noindent{\centerline{{\bf ЛИТЕРАТУРА}}}%
+\setlength{\leftmargin}{-30pt}
+  \begin{enumerate}\parskip=-2pt%
+} { %
+  \end{enumerate}%
+}%
+% элементы списка
+\renewcommand{\bibitem}[2]{\item\label{#1}{{\it #2 }}}%
+
+\newcommand{\TASKS}{\vskip12pt{\noindent\bf{ЗАДАЧИ}}\ }%
+\newcommand{\HOMETASKS}{\vskip16pt{\noindent\bf{ДОМАШНЕЕ ЗАДАНИЕ}}\ }%
+\newcounter{task}%
+ \newenvironment{task}[1]{\vskip0pt\noindent\refstepcounter{task}{\bf\thetask\ (#1).}\ }{\smallbreak}%
+% \newenvironment{task}[1]{\vskip12pt\noindent\refstepcounter{task}{{{\bf\thetask.}}}\ }{\smallbreak}%
+ \newenvironment{task*}{\vskip12pt\noindent\refstepcounter{task}\ }{\smallbreak}%
+ \renewcommand{\thetask}{\arabic{task}}%
+
+\newcommand{\answer}{\noindent{\bf Ответ:}\ }%
+
+\newenvironment{solution}{\noindent{\bf Решение.\ }}%{\smallbreak}%
+
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\fancyhead[C]{}
+\hrule \medskip % Upper rule
+\begin{minipage}{0.295\textwidth} 
+\raggedright\footnotesize
+YOURNAME \hfill\\   
+YOURSTUDENTID \hfill\\
+YOURMAIL
+\end{minipage}
+\begin{minipage}{0.4\textwidth} 
+\centering\large 
+ЗАНЯТИЕ 1\\ 
+\normalsize 
+Алгебра и геометрия, 1 семестр\\ 
+\end{minipage}
+\begin{minipage}{0.295\textwidth} 
+\raggedleft
+\today\hfill\\
+\end{minipage}
+\medskip\hrule 
+\bigskip
+
+%------------------------------------------------
+%	CONTENTS
+%------------------------------------------------
+
+\section{Действия над комплексными числами}
+Для того чтобы решить уравнение ${x^2+1=0}$ действительных чисел недостаточно.
+В качестве материала, из которого будет строиться новая система чисел,
+возьмем точки на плоскости. Пусть на плоскости выбрана прямоугольная система координат.
+Рассмотрим две точки ${\alpha=(a,b)}$ и ${\beta=(c,d)}$.
+
+Суммой будем называть: $(a,b)+(c,d)=(a+c,b+d)$.
+
+Произведением будем называть: $(a,b)\cdot(c,d)=(ac-bd, ad+bc)$.
+
+Рассмотрим точку $(0,1)$. По введенному свойству произведения: $(0,1)\cdot(0,1)=(-1,0)$. 
+Обозначим точку $(0,1)$ через {\flqq}$i${\frqq}, тогда $i^2=-1$.
+
+Таким образом $(a,b)=(a,0)+(0,b)=a+ib$.
+
+Свойства комплексных чисел:
+\begin{enumerate}
+ \item $(a+ib)+(c+id)=(a+c)+i(b+d)$;
+ \item $(a+ib)-(c+id)=(a-c)+i(b-d)$;
+ \item $(a+ib)\cdot(c+id)=(ac-bd)+i(ad+bc)$;
+ \item $\displaystyle\frac{(a+ib)}{(c+id)}=\displaystyle\frac{(ac+bd)}{c^2+d^2}+i\displaystyle\frac{(bc-ad)}{c^2+d^2}$.
+\end{enumerate}
+
+Для комплексного числа $\alpha=a+ib$ число $\overline{\alpha}=a-ib$ называется {\it сопряженным} 
+(геометрически~-- точки симметричные относительно действительной оси).
+
+\TASKS
+
+\begin{task*} {101.}
+Вычислить $(2+3i)(4-5i)+(2-3i)(4+5i)$.
+\end{task*}
+\answer  46.
+
+\begin{task*} {105(a).}
+Вычислить $(1+2i)^6$.
+\end{task*}
+\answer  $117+44i$.
+
+\begin{task*} {105(b).}
+Вычислить $(2+i)^7+(2-i)^7$.
+\end{task*}
+\answer  $-556$.
+
+\begin{task*} {107(c).}
+Вычислить $\displaystyle\frac{(1+2i)^2-(2-i)^3}{(1-i)^3+(2+i)^2}$.
+\end{task*}
+\answer  $5+5i$.
+
+\begin{task*} {103.}
+$(1+2i)x+(3-5i)y=1-3i$. Найти $x$ и $y$, считая их вещественными.
+\end{task*}
+\answer  $x=-\frac{4}{11}$, $y=\frac{5}{11}$.
+
+\begin{task*} {108(a).}
+Решить систему уравнений
+$$
+\left\{ 
+\begin{aligned}
+  (3-i)x+(4+2i)y &=2+6i,\\
+  (4+2i)x-(2+3i)y &=5+4i.
+\end{aligned}
+\right.
+$$
+\end{task*}
+\answer  $x=1+i$, $y=i$.
+
+\begin{task*} {112(a,h).}
+Вычислить: a) $\sqrt{2i}$, h) $\sqrt{1-i\sqrt{3}}$.
+\end{task*}
+\answer  a) $\pm(1+i)$; h) $\pm\left( \sqrt{\frac{3}{2}}-i\sqrt{\frac{1}{2}}\right)$.
+
+
+\begin{task*} {113(a).}
+Решить уравнение $x^2-(2+i)x+(-1+7i)=0$.
+\end{task*}
+\answer $x_1=3-i$, $x_2=-1+2i$.
+
+\HOMETASKS
+
+\begin{task*} {102.}
+Вычислить $(x-1-i)(x-1+i)(x+1+i)(x+1-i)$.
+\end{task*}
+
+\begin{task*} {105(c).}
+Вычислить $(1+2i)^5-(1-2i)^5$.
+\end{task*}
+
+\begin{task*} {107(d).}
+Вычислить $\displaystyle\frac{(1-i)^5-1}{(1+i)^5+1}$.
+\end{task*}
+
+\begin{task*} {108(b).}
+Решить систему уравнений
+$$
+\left\{ 
+\begin{aligned}
+  (2+i)x+(2-i)y &=6,\\
+  (3+2i)x+(3-2i)y &=8.
+\end{aligned}
+\right.
+$$
+\end{task*}
+
+\begin{task*} {112(b,g).}
+Вычислить: b) $\sqrt{-8i}$, g) $\sqrt{2-3i}$.
+\end{task*}
+
+\begin{task*} {113(b).}
+Решить уравнение $x^2-(3-2i)x+(5-5i)=0$.
+\end{task*}
+
+\begin{thebibliography}
+\bibitem{Fadeev}{Фаддеев Д. К., Соминский И. С.} {Задачи по высшей алгебре.--- СПб.: Изд-во Лань, 2004.--- 288 с.}
+\end{thebibliography}
+
+%------------------------------------------------
+\end{document}
