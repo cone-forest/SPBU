@@ -1,0 +1,230 @@
+\documentclass[a4paper, 12pt]{article}
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0in}
+
+\usepackage[T2A]{fontenc}% Внутренняя T2A кодировка TeX
+\usepackage[utf8]{inputenc}% кодировка файла
+\usepackage[russian]{babel}% поддержка переносов в русском языке
+\usepackage{amsthm, amsmath, amssymb} % Mathematical typesetting
+\usepackage{float} % Improved interface for floating objects
+\usepackage{graphicx, multicol} % Enhanced support for graphics
+\usepackage{xcolor} % Driver-independent color extensions
+\usepackage{mdframed}
+
+\usepackage[yyyymmdd]{datetime} % Uses YEAR-MONTH-DAY format for dates
+\renewcommand{\dateseparator}{.} % Sets dateseparator to '.'
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{}\renewcommand{\headrulewidth}{0pt} % Blank out the default header
+\fancyfoot[L]{} % Custom footer text
+\fancyfoot[C]{} % Custom footer text
+\fancyfoot[R]{\thepage} % Custom footer text
+
+\newenvironment{problem}[2][Задача]
+    { \begin{mdframed}[backgroundcolor=gray!10] \textbf{#1 #2.} \\}
+    {  \end{mdframed}}
+
+\newenvironment{solution}
+    {\textit{Решение: }}
+    {\noindent\rule{7in}{1.5pt}}
+
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\fancyhead[C]{}
+\hrule \medskip % Upper rule
+\begin{minipage}{0.295\textwidth} 
+\raggedright\footnotesize
+Михаил Цуканов \hfill\\   
+st117303 \hfill\\
+st117303@student.spbu.ru
+\end{minipage}
+\begin{minipage}{0.4\textwidth} 
+\centering\large 
+Homework Assignment 2\\ 
+\normalsize 
+Алгебра и геометрия, 1 семестр\\ 
+\end{minipage}
+\begin{minipage}{0.295\textwidth} 
+\raggedleft
+\today\hfill\\
+\end{minipage}
+\medskip\hrule 
+\bigskip
+
+%------------------------------------------------
+%	CONTENTS
+%------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 1
+\begin{problem}{120}
+Представить в тригонометрической форме: $2+\sqrt{3}+i$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+$
+2 + \sqrt3 + i = \\
+2\sqrt{2 + \sqrt3}(\frac{1}{2}\sqrt{2 + \sqrt3} + i * \frac{1}{2}\sqrt{2 - \sqrt3}) = \\
+(2\sqrt{2 + \sqrt3}, \arccos{\frac{\sqrt{2 + \sqrt3}}{2}})
+$
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 2
+\begin{problem}{137(c, d)}
+Вычислить, пользуясь формулой Муавра \\
+c)~$\left( 1- \displaystyle\frac{\sqrt{3}-i}{2}\right)^{24}$, \\
+d)~$\left( \displaystyle\frac{(-1+i\sqrt{3})^{15}}{(1-i)^{20}}\right)+\left( \displaystyle\frac{(-1-i\sqrt{3})^{15}}{(1+i)^{20}}\right)$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+c)~ \\
+d)~
+$
+\left(
+  \displaystyle\frac{(-1 + i\sqrt{3})^{15}}{(1 - i)^{20}}
+\right) + 
+\left(
+  \displaystyle\frac{(-1 - i\sqrt{3})^{15}}{(1+i)^{20}}
+\right) = \\
+
+\left(
+  \displaystyle\frac{2^{15}(\frac{-1}{2} + i\frac{\sqrt{3}}{2})^{15}}{2^{10}(\frac{1}{\sqrt2} - i\frac{1}{\sqrt2})^{20}}
+\right) + 
+\left(
+  \displaystyle\frac{2^{15}(\frac{-1}{2} - i\frac{\sqrt{3}}{2})^{15}}{2^{10}(\frac{1}{\sqrt2} + i\frac{1}{\sqrt2})^{20}}
+\right) = \\
+
+\left(
+  \displaystyle\frac{2^{5}(\cos{(15*\frac{2\pi}{3})} + i\sin{(15*\frac{2\pi}{3})})}{(\cos{(20*-\frac{\pi}{4})} - i\sin{(20*-\frac{\pi}{4})})}
+\right) + 
+\left(
+  \displaystyle\frac{2^{5}(\cos{(15*-\frac{2\pi}{3})} - i\cos{(15*-\frac{2\pi}{3})})}{(\cos{(20*\frac{\pi}{4})} + i\cos{(20*\frac{\pi}{4})})}
+\right) = \\
+
+-2^{5} + 2^{5} = 0
+$
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 3
+\begin{problem}{143(b, e)}
+Извлечь корни b)~$\sqrt[3]{2+2i}$, e)~$\sqrt[6]{-27}$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+$
+b)~\sqrt[3]{2 + 2i} = \sqrt[6]{8}(\cos{(\frac{\pi}{12} + \frac{2}{3}\pi k)} + i\sin{(\frac{\pi}{12} + \frac{2}{3}\pi k)})
+\\
+e)~\sqrt[6]{-27} = \sqrt3(\cos{(\frac{-\pi}{12} + \frac{1}{6}\pi k)} + i\sin{((\frac{-\pi}{12} + \frac{1}{6}\pi k))})
+$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 4
+\begin{problem}{145(c)}
+Вычислить $\sqrt[6]{\displaystyle\frac{1-i}{1+i\sqrt{3}}}$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+$
+\sqrt[6]{\displaystyle\frac{1-i}{1+i\sqrt{3}}} =
+\sqrt[6]{\frac{\sqrt2(\cos{(-\frac{\pi}{4})} + i\sin{(-\frac{\pi}{4})})}{2(\cos{\frac{\pi}{3}} + i\sin{\frac{\pi}{3}})}} = 
+\frac{1}{\sqrt[12]{2}}(\cos{(-\frac{7\pi}{12})} + i\sin{(-\frac{7\pi}{12})})
+$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 5
+\begin{problem}{125}
+Доказать, что всякое комплексное число $z$, отличное от $-1$, модуль которого $1$, 
+может быть представлено в форме $\displaystyle z=\frac{1+it}{1-it}$, где $t$~-- вещественное число.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+$
+$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 6
+\begin{problem}{182}
+Найти сумму всех корней $n$-й степени ($n>1$) из $1$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+Любое множество корней $n$-й степени - правильный $n$-угольник, при этом $x = 1$ всегда является корнем.
+Значит корни всегда симметричны относительно вещественной оси. \\
+Для четных $n$ сумма корней равна $0$, для нечетных - $1$.
+Итого сумма равна $\left[n / 2\right]$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 7
+\begin{problem}{183}
+Вычислить $1+2\varepsilon+3\varepsilon^2+...+n\varepsilon^{n-1}$, где $\varepsilon$ -- корень $n$-й степени из $1$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 8
+\begin{problem}{146}
+Выразить $\cos 5x$ через $\cos x$ и $\sin x$
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+$
+\cos 5x = \cos{(2x + 3x)} = \cos2x * \cos3x - \sin2x * \sin3x = \\
+(\cos^2x - \sin^2x)(4\cos^3x - 3\cos x) - 2\sin x \cos x(3\sin x - 4\sin^3 x) = \\
+4\cos^5 x - 3\cos^3 x - 4\sin^2x\cos^3x - 3\cos x \sin^2 x + 6\sin^4x\cos x 
+$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+%------------------------------------------------
+\end{document}
