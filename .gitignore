@@ -3,3 +3,7 @@
 *.fls
 *.log
 *.gz
+
+build
+.cache
+compile_commands.json
