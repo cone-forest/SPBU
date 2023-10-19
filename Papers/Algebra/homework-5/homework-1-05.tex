@@ -1,0 +1,239 @@
+\documentclass[a4paper, 12pt]{article}
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0in}
+
+\usepackage[T2A]{fontenc}% Внутренняя T2A кодировка TeX
+\usepackage[utf8]{inputenc}% кодировка файла
+\usepackage[russian]{babel}% поддержка переносов в русском языке
+\usepackage{amsthm, amsmath, amssymb} % Mathematical typesetting
+\usepackage{float} % Improved interface for floating objects
+\usepackage{graphicx, multicol} % Enhanced support for graphics
+\usepackage{xcolor} % Driver-independent color extensions
+\usepackage{mdframed}
+\usepackage{polynom}
+
+\usepackage[yyyymmdd]{datetime} % Uses YEAR-MONTH-DAY format for dates
+\renewcommand{\dateseparator}{.} % Sets dateseparator to '.'
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{}\renewcommand{\headrulewidth}{0pt} % Blank out the default header
+\fancyfoot[L]{} % Custom footer text
+\fancyfoot[C]{} % Custom footer text
+\fancyfoot[R]{\thepage} % Custom footer text
+
+\newenvironment{problem}[2][Задача]
+    { \begin{mdframed}[backgroundcolor=gray!10] \textbf{#1 #2.} \\}
+    {  \end{mdframed}}
+
+\newenvironment{solution}
+    {\textit{Решение: }}
+    {\noindent\rule{7in}{1.5pt}}
+
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\fancyhead[C]{}
+\hrule \medskip % Upper rule
+\begin{minipage}{0.295\textwidth} 
+\raggedright\footnotesize
+Цуканов Михаил \hfill\\   
+st117303 \hfill\\
+st117303@student.spbu.ru
+\end{minipage}
+\begin{minipage}{0.4\textwidth} 
+\centering\large 
+Homework Assignment 5\\ 
+\normalsize 
+Алгебра и геометрия, 1 семестр\\ 
+\end{minipage}
+\begin{minipage}{0.295\textwidth} 
+\raggedleft
+\today\hfill\\
+\end{minipage}
+\medskip\hrule 
+\bigskip
+
+%------------------------------------------------
+%	CONTENTS
+%------------------------------------------------
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 1
+\begin{problem}{615}
+Сумма двух корней уравнения $2x^3-x^2-7x+\lambda=0$ равна 1. Определить $\lambda$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+$
+2x^3-x^2-7x+\lambda=0 \\
+x^3-\frac{1}{2}x^2-3\frac{1}{2}x+\frac{\lambda}{2}=0 \\
+\\
+$
+По т. Виета: \\
+$
+x_0 + x_1 + x_2 = -\frac{1}{2} \\
+x_2 = -1\frac{1}{2} \\
+\\
+(x_0 + x_1)x_2 + x_0*x_1 = -3\frac{1}{2} \\
+-1\frac{1}{2} + x_0*x_1 = -3\frac{1}{2} \\
+x_0*x_1 = -2 \\
+\\
+$
+тогда \\
+$
+\lambda = x_0*x_1*x_2 = -2 * -1\frac{1}{2} = 3
+$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 2
+\begin{problem}{618}
+Решить уравнение $x^n+a_1 x^{n-1}+a_2 x^{n-2}+...+a_n = 0$, зная коэффициенты $a_1$ и $a_2$, и зная, что корни его образуют арифметическую прогрессию.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+Воспользуемся теоремой Виета: \\
+$
+\sum_{i=1}^{n}x_i = -a_1 \\
+\sum_{i=1, j=1, \neq{i}{j}}^{n}x_i*x_j = a_2 \\
+$
+Тогда  \\
+$-a_1$ - сумма арифметической прогрессии \\
+$a_2$ - сумма таблицы умножения этой прогрессии без главной диагонали \\
+$
+-a_1 = x_0*n + d\frac{n(n-1)}{2} \\
+a_2 =
+\sum_{i=0, j=0, \neq{i}{j}}^{n - 1}(x_0 + jd)*(x_0 + id) =
+\sum_{i=0, j=0, \neq{i}{j}}^{n - 1}(x_0^2 + dx_0(i + j) + ijd^2) = \\
+n(n - 1)x_0^2 + dx_0\sum_{i=0, j=0, \neq{i}{j}}^{n - 1}(i + j) + d^2\sum_{i=1, j=1, \neq{i}{j}}^{n - 1}(ij)\\
+$
+Осталось узнать суммы таблиц суммы и умножения без главных диагоналей и решить получившуюся систему. \\
+Сумма таблицы сложения без главной диагонали \\
+$n * n(n + 1) - \frac{n(n+1)}{2} = (n-\frac{1}{2})n(n+1)$
+Сумма таблицы умножения без главной диагонали \\
+$
+\sum_{i = 1}^{n}\frac{n(n+1)}{2}i - \sum_{i = 1}^{n}i^2 =
+\frac{n^2(n+1)^2}{4} - \frac{2n(n+1)(2n+1)}{3} = 
+$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 3
+\begin{problem}{621}
+Составить уравнение $6$-й степени, имеющее корни 
+$\alpha$, $\frac{1}{\alpha}$, $1-\alpha$, $\frac{1}{1-\alpha}$, $1-\frac{1}{\alpha}$, $\frac{1}{1-\frac{1}{\alpha}}$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 4
+\begin{problem}{552(a)}
+Пользуясь схемой Горнера, разложить $\displaystyle\frac{x^3-x+1}{(x-2)^5}$ на простейшие дроби.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+\polyhornerscheme[showbase=bottom, showmiddlerow=false, x=2]{x^3-x+1} \\
+\polyhornerscheme[showbase=bottom, showmiddlerow=false, x=2]{x^2+2x+3} \\
+\polyhornerscheme[showbase=bottom, showmiddlerow=false, x=2]{x^1+4} \\
+
+Получили разложение $x^3-x+1$ на $x-2$. Поделим его на $(x-2)^5$. \\
+Итого \\
+$
+\displaystyle\frac{x^3-x+1}{(x-2)^5} = 
+\frac{1}{(x-2)^2} + \frac{6}{(x-2)^3} + \frac{11}{(x-2)^4} + \frac{7}{(x-2)^5} \\
+$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 5
+\begin{problem}{626(b)}
+Разложить на простейшие дроби над полем $R$:
+$\frac{x^2}{x^4-16}$
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+$
+\frac{x^2}{x^4-16} = \frac{x^2}{(x^2+4)(x - 2)(x + 2)} = 
+\frac{ax + b}{x^2+4} + \frac{c}{x - 2} + \frac{d}{x + 2} = 
+$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 6
+\begin{problem}{627(b)}
+Разложить на простейшие дроби над полем $R$:
+$\frac{2x-1}{x(x+1)^2(x^2+x+1)^2}$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 7
+\begin{problem}{624(d)}
+Разложить на простейшие дроби над полем $C$: $\frac{x^2}{x^4-1}$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 8
+\begin{problem}{625(c)}
+Разложить на простейшие дроби над полем $C$: $\frac{5x^2+6x-23}{(x-1)^3(x+1)^2(x-2)}$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution} 
+
+
+%------------------------------------------------
+\end{document}
