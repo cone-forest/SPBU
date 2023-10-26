@@ -43,9 +43,9 @@
 \hrule \medskip % Upper rule
 \begin{minipage}{0.295\textwidth} 
 \raggedright\footnotesize
-YOURNAME \hfill\\   
-YOURSTUDENTID \hfill\\
-YOURMAIL
+Цуканов Михаил \hfill\\   
+st117303 \hfill\\
+st117303@student.spbu.ru
 \end{minipage}
 \begin{minipage}{0.4\textwidth} 
 \centering\large 
@@ -76,7 +76,114 @@ $\left| \begin{array}{rrrrrrr}a & 0 & 0 & \ldots & 0 & 0 & b\\ 0 & a & 0 & \ldot
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ваше решение задачи здесь
 
-
+Разложим по первому столбцу \\
+$
+\left|
+\begin{array}{rrrrrrr}
+a & 0 & 0 & \ldots & 0 & 0 & b \\
+0 & a & 0 & \ldots & 0 & b & 0 \\
+0 & 0 & a & \ldots & b & 0 & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+0 & 0 & b & \ldots & a & 0 & 0 \\
+0 & b & 0 & \ldots & 0 & a & 0 \\
+b & 0 & 0 & \ldots & 0 & 0 & a
+\end{array}
+\right|
+=
+a
+\left|
+\begin{array}{rrrrrrr}
+a & 0 & 0 & \ldots & 0 & 0 & b \\
+0 & a & 0 & \ldots & 0 & b & 0 \\
+0 & 0 & a & \ldots & b & 0 & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+0 & 0 & b & \ldots & a & 0 & 0 \\
+0 & b & 0 & \ldots & 0 & a & 0 \\
+b & 0 & 0 & \ldots & 0 & 0 & a
+\end{array}
+\right|
+- b
+\left|
+\begin{array}{rrrrrrr}
+a & 0 & 0 & \ldots & 0 & 0 & b \\
+0 & a & 0 & \ldots & 0 & b & 0 \\
+0 & 0 & a & \ldots & b & 0 & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+0 & 0 & b & \ldots & a & 0 & 0 \\
+0 & b & 0 & \ldots & 0 & a & 0 \\
+b & 0 & 0 & \ldots & 0 & 0 & a
+\end{array}
+\right|
+= \\
+$
+\\
+Теперь размерность матрицы - $2n - 1$ \\
+Вынесем определитель за скобки и разложим по последнему столбику \\ (чтобы сохранить симметричность) \\
+$
+=
+(a - b)
+\left|
+\begin{array}{rrrrrrr}
+a & 0 & 0 & \ldots & 0 & 0 & b \\
+0 & a & 0 & \ldots & 0 & b & 0 \\
+0 & 0 & a & \ldots & b & 0 & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+0 & 0 & b & \ldots & a & 0 & 0 \\
+0 & b & 0 & \ldots & 0 & a & 0 \\
+b & 0 & 0 & \ldots & 0 & 0 & a
+\end{array}
+\right|
+=
+(a - b)
+\left(
+b
+\left|
+\begin{array}{rrrrrrr}
+a & 0 & 0 & \ldots & 0 & 0 & b \\
+0 & a & 0 & \ldots & 0 & b & 0 \\
+0 & 0 & a & \ldots & b & 0 & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+0 & 0 & b & \ldots & a & 0 & 0 \\
+0 & b & 0 & \ldots & 0 & a & 0 \\
+b & 0 & 0 & \ldots & 0 & 0 & a
+\end{array}
+\right|
++ a
+\left|
+\begin{array}{rrrrrrr}
+a & 0 & 0 & \ldots & 0 & 0 & b \\
+0 & a & 0 & \ldots & 0 & b & 0 \\
+0 & 0 & a & \ldots & b & 0 & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+0 & 0 & b & \ldots & a & 0 & 0 \\
+0 & b & 0 & \ldots & 0 & a & 0 \\
+b & 0 & 0 & \ldots & 0 & 0 & a
+\end{array}
+\right|
+\right)
+$
+\\ \\
+Вынесем определитель за скобки \\
+$
+(a - b)(a + b)
+\left|
+\begin{array}{rrrrrrr}
+a & 0 & 0 & \ldots & 0 & 0 & b \\
+0 & a & 0 & \ldots & 0 & b & 0 \\
+0 & 0 & a & \ldots & b & 0 & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+0 & 0 & b & \ldots & a & 0 & 0 \\
+0 & b & 0 & \ldots & 0 & a & 0 \\
+b & 0 & 0 & \ldots & 0 & 0 & a
+\end{array}
+\right|
+$
+\\ \\
+Размерность оставшейся матрицы $2(n - 1)$ \\
+Повторив операцию n раз получим ответ: \\
+$
+(a^2 - b^2)^n
+$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{solution} 
@@ -106,7 +213,28 @@ $\left| \begin{array}{ccccc}1 & 2 & 3 & \ldots & n \\ 2 & 3 & 4 & \ldots & 1 \\ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ваше решение задачи здесь
 
-
+Вычтем из $i$ строки $i-1$ю \\
+$
+\left|
+\begin{array}{ccccc}
+1 & 2 & 3 & \ldots & n \\
+2 & 3 & 4 & \ldots & 1 \\
+3 & 4 & 5 & \ldots & 2 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+n & 1 & 2 & \ldots & n-1 
+\end{array}
+\right|
+=
+\left|
+\begin{array}{cccccc}
+1 & 2 & 3 & \ldots & n-1 & n \\
+1 & 1 & 1 & \ldots & 1 & 1-n \\
+1 & 1 & 1 & \ldots & 1-n & 1 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & 1-n & 1 & \ldots & 1 & 1
+\end{array}
+\right|
+$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{solution} 
@@ -122,7 +250,61 @@ $\delta=\left| \begin{array}{rrrr} 1 & 0 & 0 & 0\\ -2 & 1 & 0 & 0\\ 3 & 2 & 1 & 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ваше решение задачи здесь
 
-
+$
+\Delta=
+\left|
+\begin{array}{rrrr}
+-1 & -9 & -2 & 3 \\
+-5 & 5 & 3 & -2 \\
+-12 & -6 & 1 & 1 \\
+9 & 0 & -2 & 1
+\end{array}
+\right|
+$;
+$
+\delta=
+\left|
+\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+-2 & 1 & 0 & 0 \\
+3 & 2 & 1 & 0 \\
+-3 & 4 & 2 & 1
+\end{array}
+\right|
+\\
+\Delta * \delta = 
+\left|
+\left(
+\begin{array}{rrrr}
+-1 & -9 & -2 & 3 \\
+-5 & 5 & 3 & -2 \\
+-12 & -6 & 1 & 1 \\
+9 & 0 & -2 & 1
+\end{array}
+\right)
+*
+\left(
+\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+-2 & 1 & 0 & 0 \\
+3 & 2 & 1 & 0 \\
+-3 & 4 & 2 & 1
+\end{array}
+\right)
+\right|
+=
+\left|
+\left(
+\begin{array}{rrrr}
+2 & -1 & 4 & 3 \\
+0 & 3 & -1 & -2 \\
+0 & 0 & 3 & 1 \\
+0 & 0 & 0 & 1 
+\end{array}
+\right)
+\right|
+= 2 * 3 * 3 * 1 = 18
+$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{solution} 
@@ -132,81 +314,6 @@ $\delta=\left| \begin{array}{rrrr} 1 & 0 & 0 & 0\\ -2 & 1 & 0 & 0\\ 3 & 2 & 1 & 
 \begin{problem}{391}
 Доказать, что $\det\left(\begin{array}{cc}E_m & B\\C & D\end{array}\right)=\det(D-CB)$.
 Здесь $B$ и $C$~-- произвольные $m\times n$- и $n\times m$-матрицы, $D$~-- квадратная матрица порядка $n$.
-\end{problem}
-\begin{solution}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ваше решение задачи здесь
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{solution} 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Задача 6
-\begin{problem}{ }
-
-
-\end{problem}
-\begin{solution}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ваше решение задачи здесь
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{solution} 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Задача 7
-\begin{problem}{ }
-
-
-\end{problem}
-\begin{solution}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ваше решение задачи здесь
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{solution} 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Задача 8
-\begin{problem}{ }
-
-
-\end{problem}
-\begin{solution}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ваше решение задачи здесь
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{solution} 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Задача 9
-\begin{problem}{ }
-
-
-\end{problem}
-\begin{solution}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ваше решение задачи здесь
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{solution} 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Задача 10
-\begin{problem}{ }
-
-
 \end{problem}
 \begin{solution}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
