@@ -1,0 +1,307 @@
+\documentclass[a4paper, 12pt]{article}
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0in}
+
+\usepackage[T2A]{fontenc}% Внутренняя T2A кодировка TeX
+\usepackage[utf8]{inputenc}% кодировка файла
+\usepackage[russian]{babel}% поддержка переносов в русском языке
+\usepackage{amsthm, amsmath, amssymb} % Mathematical typesetting
+\usepackage{float} % Improved interface for floating objects
+\usepackage{graphicx, multicol} % Enhanced support for graphics
+\usepackage{xcolor} % Driver-independent color extensions
+\usepackage{mdframed}
+
+\usepackage[yyyymmdd]{datetime} % Uses YEAR-MONTH-DAY format for dates
+\renewcommand{\dateseparator}{.} % Sets dateseparator to '.'
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{}\renewcommand{\headrulewidth}{0pt} % Blank out the default header
+\fancyfoot[L]{} % Custom footer text
+\fancyfoot[C]{} % Custom footer text
+\fancyfoot[R]{\thepage} % Custom footer text
+
+\newenvironment{problem}[2][Задача]
+    { \begin{mdframed}[backgroundcolor=gray!10] \textbf{#1 #2.} \\}
+    {  \end{mdframed}}
+
+\newenvironment{solution}
+    {\textit{Решение: }}
+    {\noindent\rule{7in}{1.5pt}}
+
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\fancyhead[C]{}
+\hrule \medskip % Upper rule
+\begin{minipage}{0.295\textwidth}
+\raggedright\footnotesize
+Михаил Цуканов \hfill\\
+st117303 \hfill\\
+st117303@student.spbu.ru
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\centering\large
+Homework Assignment 12\\
+\normalsize
+Алгебра и геометрия, 1 семестр\\
+\end{minipage}
+\begin{minipage}{0.295\textwidth}
+\raggedleft
+\today\hfill\\
+\end{minipage}
+\medskip\hrule
+\bigskip
+
+%------------------------------------------------
+%	CONTENTS
+%------------------------------------------------
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 1
+\begin{problem}{10}
+Дан четырёхугольник $ABCD$. Найти такую точку $M$, чтобы
+$
+\overrightarrow{MA} + \overrightarrow{MB} + \overrightarrow{MC} + \overrightarrow{MD} = \vec{0}
+$
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+$
+\overrightarrow{MA} + \overrightarrow{MB} + \overrightarrow{MC} + \overrightarrow{MD} =
+\overrightarrow{OA} + \overrightarrow{MO} +
+\overrightarrow{OB} + \overrightarrow{MO} +
+\overrightarrow{OC} + \overrightarrow{MO} +
+\overrightarrow{OD} + \overrightarrow{MO} = \vec{0}
+\\
+4\overrightarrow{OM} =
+ \overrightarrow{OA} +
+ \overrightarrow{OB} +
+ \overrightarrow{OC} +
+ \overrightarrow{OD}
+$
+\\
+Значит $M$ - центр массы четырехугольника $ABCD$ \\
+То есть $M$ - середина средней линии (Такая точка единственная по свойству средней линии).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 2
+\begin{problem}{13}
+Дан тетраэдр $ABCD$. Найти точку $M$ для которой
+$
+\overrightarrow{MA} +
+\overrightarrow{MB} +
+\overrightarrow{MC} +
+\overrightarrow{MD} = \vec{0}
+$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+Аналогично задаче 10 раскроем каждый вектор как сумму радиус-векторов. \\
+$
+\overrightarrow{MA} + \overrightarrow{MB} + \overrightarrow{MC} + \overrightarrow{MD} =
+\overrightarrow{OA} + \overrightarrow{MO} +
+\overrightarrow{OB} + \overrightarrow{MO} +
+\overrightarrow{OC} + \overrightarrow{MO} +
+\overrightarrow{OD} + \overrightarrow{MO} = \vec{0}
+$
+\\
+Значит $M$ - тоже центр масс. Для тетраэдра это - точка пересечения медиан.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 3
+\begin{problem}{24}
+В трапеции $ABCD$ отношение основания $BC$ к основанию $AD$ равно $\lambda$. Принимая за базис
+векторы $\overrightarrow{AD}$ и $\overrightarrow{AB}$, найти координаты векторов
+$\overrightarrow{AB}$, $\overrightarrow{BC}$, $\overrightarrow{CD}$, $\overrightarrow{DA}$,
+$\overrightarrow{AC}$ и $\overrightarrow{BD}$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+$
+\overrightarrow{AB} = \{0, 1\}, \\
+\overrightarrow{BC} = \{\lambda, 0\}, \\
+\overrightarrow{CD} = \overrightarrow{AD} - (\overrightarrow{AB} + \overrightarrow{BC}) = \{1, 0\} - (\{0, 1\} + \{\lambda, 0\}) = \{1 - \lambda, -1\}, \\
+\overrightarrow{DA} = \{-1, 0\}, \\
+$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 4
+\begin{problem}{17}
+Доказать, что сумма векторов, идущих из центра правильного многоугольника к его вершинам, равна нулю.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+Пойдем от обратного.
+Пусть
+$
+\sum_{i=3}^{n} \overrightarrow{OP}_i = \overrightarrow{a} \\
+$
+Повернем многоугольник на угол между двумя его вершинами ($\gamma = 180 - \alpha$, где $\alpha$ - угол многоугольника). При этом получившаяся фигура будет равна исходной в силу симметрии правильного многоугольника. То есть сумма не должна поменяться. \\
+домножим сумму на матрицу поворота относительно оси $Z$ \\
+$
+\overrightarrow{a} = \overrightarrow{a} *
+\left(
+\begin{array}{rrr}
+\cos{\gamma} & -\sin{\gamma} & 0 \\
+\sin{\gamma} &  \cos{\gamma} & 0 \\
+0 & 0 & 1
+\end{array}
+\right)
+\\
+\left(
+  \begin{array}{r}
+    x \\ y \\ z
+  \end{array}
+\right)
+=
+\left(
+  \begin{array}{r}
+    x\cos{\gamma} + y\sin{\gamma} \\
+    -x\sin{\gamma} + y\cos{\gamma} \\
+    z
+  \end{array}
+\right)
+\\
+\left\{
+  \begin{array}{l}
+    x(1 - \cos{\gamma}) = y\sin{\gamma}\\
+    y(\cos{\gamma} - 1) = x\sin{\gamma}\\
+  \end{array}
+\right
+\left\{
+  \begin{array}{l}
+    \frac{x(1 - \cos{\gamma})}{\sin{\gamma}} = y\\
+    -x(\cos{\gamma} - 1)^2 = x\sin{\gamma}^2\\
+  \end{array}
+\right
+\left\{
+  \begin{array}{l}
+    \frac{x(1 - \cos{\gamma})}{\sin{\gamma}} = y\\
+    x((\cos{\gamma} - 1)^2 + \sin{\gamma}^2) = 0 \\
+  \end{array}
+\right
+\\
+\left\{
+  \begin{array}{l}
+    \frac{x(1 - \cos{\gamma})}{\sin{\gamma}} = y\\
+    x(2 - 2\cos{\gamma}) = 0 \\
+  \end{array}
+\right
+\\
+\left\{
+  \begin{array}{l}
+    x = 0 \\
+    y = 0
+  \end{array}
+\right
+\lor
+\gamma = 0
+$
+
+По условию $\gamma > 0$ значит $x = 0 \land y = 0$ чтд.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 5
+\begin{problem}{29}
+Показать, что каковы бы ни были три вектора $\vec a$, $\vec b$ и $\vec c$ и три числа $\alpha$, $\beta$, $\gamma$
+векторы $\alpha\vec{a}-\beta\vec{b}$, $\gamma\vec{b}-\alpha\vec{c}$,
+$\beta\vec{c}-\gamma\vec{a}$ компланарны.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+$
+\\
+\dot{\overrightarrow{a}} = \alpha\vec{a}-\beta\vec{b}
+\\
+\dot{\overrightarrow{b}} = \gamma\vec{b}-\alpha\vec{c}
+\\
+\dot{\overrightarrow{c}} = \beta\vec{c}-\gamma\vec{a}
+$
+
+3 вектора комланарны тогда и только тогда, когда они линейно зависимы. \\
+$\dot{\overrightarrow{c}} = -\dot{\overrightarrow{a}} - \dot{\overrightarrow{b}}$ \\
+Значит они компланарны.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Задача 6
+\begin{problem}{31}
+Даны вектора $\vec{a}=\{1,2,3\}$, $\vec{b}=\{2,-2,1\}$, $\vec{c}=\{4,0,3\}$, $\vec{d}=\{16,10,18\}$.
+Найти вектор, являющийся проекцией вектора $\vec d$ на плоскость, определяемую векторами
+$\vec a$ и $\vec b$ при направлении проектирования, параллельном вектору $\vec c$.
+\end{problem}
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ваше решение задачи здесь
+
+Плоскость $(\overrightarrow{a}, \overrightarrow{b})$ определяется нормалью. \\
+$
+\overrightarrow{n} =
+\overrightarrow{a} \times \overrightarrow{b} =
+\left|
+  \begin{array}{rrr}
+    \overrightarrow{i} & \overrightarrow{j} & \overrightarrow{k} \\
+    1 &  2 & 3 \\
+    2 & -2 & 1
+  \end{array}
+\right|
+= \{8, 5, -6\}
+$
+\\ Уравнение плоскости: $\overrightarrow{p} \cdot \overrightarrow{n} = 0$ \\
+Расстояние от начала координат до плоскости равно 0, и вектор d начинается в начале координат.
+Значит нужно спроектировать на плоскость только саму точку (16, 10, 18).
+Проекция будет совпадать с точкой пересечения прямой, параллельной $\overrightarrow{c}$ и проходящей через $\overrightarrow{d}$
+\\ Уравнение прямой: $\overrightarrow{p} = \overrightarrow{d} + \alpha * \overrightarrow{c}$
+
+Значит уравнение точки пересечения:
+$(\overrightarrow{d} + \alpha * \overrightarrow{c}) \cdot \overrightarrow{n} = 0$ \\
+$\alpha = -\frac{\overrightarrow{d} \cdot \overrightarrow{n}}{\overrightarrow{c} \cdot \overrightarrow{n}}$ \\
+$\alpha = -\frac{16 * 8 + 5 * 10 - 6 * 18}{4 * 8 + 0 * 5 - 3 * 6} = -5$ \\
+
+Значит спроектированная точка:
+$
+\overrightarrow{p} =
+\overrightarrow{d} + -5\overrightarrow{c} =
+\{16 - 5 * 4, 10 - 5 * 0, 18 - 5 * 3\} = \{-4, 10, 3\}
+$ \\
+Ответ: $\{-4, 10, 3\}$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution}
+
+%------------------------------------------------
+\end{document}
