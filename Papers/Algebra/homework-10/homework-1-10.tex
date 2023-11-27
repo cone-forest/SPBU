@@ -26,12 +26,12 @@
 \fancyfoot[R]{\thepage} % Custom footer text
 
 \newenvironment{problem}[2][Задача]
-    { \begin{mdframed}[backgroundcolor=gray!10] \textbf{#1 #2.} \\}
-    {  \end{mdframed}}
+{ \begin{mdframed}[backgroundcolor=gray!10] \textbf{#1 #2.} \\}
+{  \end{mdframed}}
 
 \newenvironment{solution}
-    {\textit{Решение: }}
-    {\noindent\rule{7in}{1.5pt}}
+{\textit{Решение: }}
+{\noindent\rule{7in}{1.5pt}}
 
 \begin{document}
 
@@ -42,20 +42,20 @@
 \fancyhead[C]{}
 \hrule \medskip % Upper rule
 \begin{minipage}{0.295\textwidth}
-\raggedright\footnotesize
-Михаил Цуканов \hfill\\
-st117303 \hfill\\
-st117303@student.spbu.ru
+  \raggedright\footnotesize
+  Михаил Цуканов \hfill\\
+  st117303 \hfill\\
+  st117303@student.spbu.ru
 \end{minipage}
 \begin{minipage}{0.4\textwidth}
-\centering\large
-Homework Assignment 10\\
-\normalsize
-Алгебра и геометрия, 1 семестр\\
+  \centering\large
+  Homework Assignment 10\\
+  \normalsize
+  Алгебра и геометрия, 1 семестр\\
 \end{minipage}
 \begin{minipage}{0.295\textwidth}
-\raggedleft
-\today\hfill\\
+  \raggedleft
+  \today\hfill\\
 \end{minipage}
 \medskip\hrule
 \bigskip
@@ -69,413 +69,404 @@ Homework Assignment 10\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Задача 1
 \begin{problem}{400(e)}
-Решить систему уравнений:\\
-$\left\{\begin{array}{l}
-x_1+x_2+x_3+3x_4=1\\
-3x_1-x_2-x_3-2x_4=-4\\
-2x_1+3x_2-x_3-x_4=-6\\
-x_1+2x_2+3x_3-x_4=-4
-\end{array}\right.$
+  Решить систему уравнений:\\
+  $\left\{\begin{array}{l}
+      x_1+x_2+x_3+3x_4=1\\
+      3x_1-x_2-x_3-2x_4=-4\\
+      2x_1+3x_2-x_3-x_4=-6\\
+      x_1+2x_2+3x_3-x_4=-4
+  \end{array}\right.$
 
 \end{problem}
 \begin{solution}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ваше решение задачи здесь
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %% Ваше решение задачи здесь
 
-$
-\left(
-\begin{array}{rrrrrrrr}
-1 & 1 & 1 & 3 & 1 \\
-3 & -1 & -1 & -2 & -4 \\
-2 & 3 & -1 & -1 & -6 \\
-1 & 2 & 3 & -1 & -4
-\end{array}
-\right)
-\rightarrow
-\left(
-\begin{array}{rrrrrrrr}
-1 &  1 &  1 &   3 &  1 \\
-0 & -4 & -4 & -11 & -7 \\
-0 &  1 & -3 &  -7 & -8 \\
-0 &  1 &  2 &  -4 & -5
-\end{array}
-\right)
-\rightarrow
-\\
-\rightarrow
-\left(
-\begin{array}{rrrrrrrr}
-1 &  1 &   1 &    3 &   1 \\
-0 & -4 &  -4 &  -11 &  -7 \\
-0 &  4 & -12 &  -28 & -32 \\
-0 &  4 &   8 &  -16 & -20
-\end{array}
-\right)
-\rightarrow
-\left(
-\begin{array}{rrrrrrrr}
-1 &  1 &   1 &    3 &   1 \\
-0 & -4 &  -4 &  -11 &  -7 \\
-0 &  0 & -16 &  -39 & -39 \\
-0 &  0 &   4 &  -27 & -27
-\end{array}
-\right)
-\rightarrow
-\\
-\rightarrow
-\left(
-\begin{array}{rrrrrrrr}
-1 &  1 &   1 &    3 &    1 \\
-0 & -4 &  -4 &  -11 &   -7 \\
-0 &  0 & -16 &  -39 &  -39 \\
-0 &  0 &   0 & -147 & -147
-\end{array}
-\right)
-$
-\\
-\\
-Нет нулевых строк $\rightarrow$ все неизвестные - константы. \\
-Итого:
-$
-\left(
-\begin{array}{r}
-x_1 \\
-x_2 \\
-x_3 \\
-x_4
-\end{array}
-\right)
-=
-\left(
-\begin{array}{r}
--1 \\
--1 \\
-0 \\
-1
-\end{array}
-\right)
-$
+  $
+  \left(
+    \begin{array}{rrrrrrrr}
+      1 & 1 & 1 & 3 & 1 \\
+      3 & -1 & -1 & -2 & -4 \\
+      2 & 3 & -1 & -1 & -6 \\
+      1 & 2 & 3 & -1 & -4
+    \end{array}
+  \right)
+  \rightarrow
+  \left(
+    \begin{array}{rrrrrrrr}
+      1 &  1 &  1 &   3 &  1 \\
+      0 & -4 & -4 & -11 & -7 \\
+      0 &  1 & -3 &  -7 & -8 \\
+      0 &  1 &  2 &  -4 & -5
+    \end{array}
+  \right)
+  \rightarrow
+  \\
+  \rightarrow
+  \left(
+    \begin{array}{rrrrrrrr}
+      1 &  1 &   1 &    3 &   1 \\
+      0 & -4 &  -4 &  -11 &  -7 \\
+      0 &  4 & -12 &  -28 & -32 \\
+      0 &  4 &   8 &  -16 & -20
+    \end{array}
+  \right)
+  \rightarrow
+  \left(
+    \begin{array}{rrrrrrrr}
+      1 &  1 &   1 &    3 &   1 \\
+      0 & -4 &  -4 &  -11 &  -7 \\
+      0 &  0 & -16 &  -39 & -39 \\
+      0 &  0 &   4 &  -27 & -27
+    \end{array}
+  \right)
+  \rightarrow
+  \\
+  \rightarrow
+  \left(
+    \begin{array}{rrrrrrrr}
+      1 &  1 &   1 &    3 &    1 \\
+      0 & -4 &  -4 &  -11 &   -7 \\
+      0 &  0 & -16 &  -39 &  -39 \\
+      0 &  0 &   0 & -147 & -147
+    \end{array}
+  \right)
+  $
+  \\
+  \\
+  Нет нулевых строк $\rightarrow$ все неизвестные - константы. \\
+  Итого:
+  $
+  \left(
+    \begin{array}{r}
+      x_1 \\
+      x_2 \\
+      x_3 \\
+      x_4
+    \end{array}
+  \right)
+  =
+  \left(
+    \begin{array}{r}
+      -1 \\
+      -1 \\
+      0 \\
+      1
+    \end{array}
+  \right)
+  $
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Задача 2
 \begin{problem}{400(f)}
-Решить систему уравнений:\\
-$\left\{\begin{array}{l}
-x_1+2x_2+3x_3-2x_4=6\\
-2x_1-x_2-2x_3-3x_4=8\\
-3x_1+2x_2-x_3+2x_4=4\\
-2x_1-3x_2+2x_3+x_4=-8
-\end{array}\right.$
+  Решить систему уравнений:\\
+  $\left\{\begin{array}{l}
+      x_1+2x_2+3x_3-2x_4=6\\
+      2x_1-x_2-2x_3-3x_4=8\\
+      3x_1+2x_2-x_3+2x_4=4\\
+      2x_1-3x_2+2x_3+x_4=-8
+  \end{array}\right.$
 
 
 \end{problem}
 \begin{solution}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ваше решение задачи здесь
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %% Ваше решение задачи здесь
 
-$
-\left(
-\begin{array}{rrrrrrrr}
-1 &  2 &  3 & -2 &  6 \\
-2 & -1 & -2 & -3 &  8 \\
-3 &  2 & -1 &  2 &  4 \\
-2 & -3 &  2 &  1 & -8
-\end{array}
-\right)
-\rightarrow
-\left(
-\begin{array}{rrrrrrrr}
-1 &  2 &   3 & -2 &   6 \\
-0 & -5 &  -8 &  1 &  -4 \\
-0 & -4 & -10 & -4 & -14 \\
-0 & -7 &  -4 &  5 & -20
-\end{array}
-\right)
-\rightarrow
-\\
-\rightarrow
-\left(
-\begin{array}{rrrrrrrr}
-1 &   2 &   3 &  -2 &    6 \\
-0 & -20 & -32 &   4 &  -16 \\
-0 &   0 & -18 & -24 &  -54 \\
-0 & -7 &  -4 &  5 & -20
-\end{array}
-\right)
-\rightarrow
-\left(
-\begin{array}{rrrrrrrr}
-1 &   2 &   3 &  -2 &   6 \\
-0 & -35 & -56 &   7 & -28 \\
-0 &   0 & -18 & -24 & -54 \\
-0 &   0 &  36 &  18 & -72
-\end{array}
-\right)
-\rightarrow
-\\
-\rightarrow
-\left(
-\begin{array}{rrrrrrrr}
-1 &   2 &   3 &  -2 &   6 \\
-0 & -35 & -56 &   7 & -28 \\
-0 &   0 & -18 & -24 & -54 \\
-0 &   0 &   0 & -30 & -180
-\end{array}
-\right)
-$
-\\
-Нет нулевых строк $\rightarrow$ все неизвестные - константы. \\
-Итого:
-$
-\left(
-\begin{array}{r}
-x_1 \\
-x_2 \\
-x_3 \\
-x_4
-\end{array}
-\right)
-=
-\left(
-\begin{array}{r}
-13 \\
-10 \\
--5 \\
- 6
-\end{array}
-\right)
-$
+  $
+  \left(
+    \begin{array}{rrrrrrrr}
+      1 &  2 &  3 & -2 &  6 \\
+      2 & -1 & -2 & -3 &  8 \\
+      3 &  2 & -1 &  2 &  4 \\
+      2 & -3 &  2 &  1 & -8
+    \end{array}
+  \right)
+  \rightarrow
+  \left(
+    \begin{array}{rrrrrrrr}
+      1 &  2 &   3 & -2 &   6 \\
+      0 & -5 &  -8 &  1 &  -4 \\
+      0 & -4 & -10 & -4 & -14 \\
+      0 & -7 &  -4 &  5 & -20
+    \end{array}
+  \right)
+  \rightarrow
+  \\
+  \rightarrow
+  \left(
+    \begin{array}{rrrrrrrr}
+      1 &   2 &   3 &  -2 &    6 \\
+      0 & -20 & -32 &   4 &  -16 \\
+      0 &   0 & -18 & -24 &  -54 \\
+      0 & -7 &  -4 &  5 & -20
+    \end{array}
+  \right)
+  \rightarrow
+  \left(
+    \begin{array}{rrrrrrrr}
+      1 &   2 &   3 &  -2 &   6 \\
+      0 & -35 & -56 &   7 & -28 \\
+      0 &   0 & -18 & -24 & -54 \\
+      0 &   0 &  36 &  18 & -72
+    \end{array}
+  \right)
+  \rightarrow
+  \\
+  \rightarrow
+  \left(
+    \begin{array}{rrrrrrrr}
+      1 &   2 &   3 &  -2 &   6 \\
+      0 & -35 & -56 &   7 & -28 \\
+      0 &   0 & -18 & -24 & -54 \\
+      0 &   0 &   0 & -30 & -180
+    \end{array}
+  \right)
+  $
+  \\
+  Нет нулевых строк $\rightarrow$ все неизвестные - константы. \\
+  Итого:
+  $
+  \left(
+    \begin{array}{r}
+      x_1 \\
+      x_2 \\
+      x_3 \\
+      x_4
+    \end{array}
+  \right)
+  =
+  \left(
+    \begin{array}{r}
+      13 \\
+      10 \\
+      -5 \\
+      6
+    \end{array}
+  \right)
+  $
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Задача 3
 \begin{problem}{443(a)}
-Решить систему уравнений:\\
-$\left\{\begin{array}{l}
-x_1+x_2+x_3+x_4+x_5=0\\
-x_1-x_2+2x_3-2x_4+3x_5=0\\
-x_1+x_2+4x_3+4x_4+9x_5=0\\
-x_1-x_2+8x_3-8x_4+27x_5=0\\
-x_1+x_2+16x_3+16x_4+81x_5=0
-\end{array}\right.$
+  Решить систему уравнений:\\
+  $\left\{\begin{array}{l}
+      x_1+x_2+x_3+x_4+x_5=0\\
+      x_1-x_2+2x_3-2x_4+3x_5=0\\
+      x_1+x_2+4x_3+4x_4+9x_5=0\\
+      x_1-x_2+8x_3-8x_4+27x_5=0\\
+      x_1+x_2+16x_3+16x_4+81x_5=0
+  \end{array}\right.$
 
 \end{problem}
 \begin{solution}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ваше решение задачи здесь
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %% Ваше решение задачи здесь
 
-$
-\left(
-\begin{array}{rrrrrrrr}
-1 &  1 &  1 &  1 &  1 & 0 \\
-1 & -1 &  2 & -2 &  3 & 0 \\
-1 &  1 &  4 &  4 &  9 & 0 \\
-1 & -1 &  8 & -8 & 27 & 0 \\
-1 &  1 & 16 & 16 & 81 & 0
-\end{array}
-\right)
-\rightarrow
-\left(
-\begin{array}{rrrrrrrr}
-1 &  1 & 1 &   1 &  1 & 0 \\
-0 & -2 & 1 &  -3 &  2 & 0 \\
-0 &  0 & 3 &   3 &  8 & 0 \\
-0 &  0 & 0 & -12 &  8 & 0 \\
-0 &  0 & 0 &   0 & 40 & 0
-\end{array}
-\right)
-$
-\\
-Нет нулевых строк $\rightarrow$ все неизвестные - константы. \\
-Итого:
-$
-\left(
-\begin{array}{r}
-x_1 \\
-x_2 \\
-x_3 \\
-x_4 \\
-x_5
-\end{array}
-\right)
-=
-\left(
-\begin{array}{r}
-0 \\
-0 \\
-0 \\
-0 \\
-0
-\end{array}
-\right)
-$
+  $
+  \left(
+    \begin{array}{rrrrrrrr}
+      1 &  1 &  1 &  1 &  1 & 0 \\
+      1 & -1 &  2 & -2 &  3 & 0 \\
+      1 &  1 &  4 &  4 &  9 & 0 \\
+      1 & -1 &  8 & -8 & 27 & 0 \\
+      1 &  1 & 16 & 16 & 81 & 0
+    \end{array}
+  \right)
+  \rightarrow
+  \left(
+    \begin{array}{rrrrrrrr}
+      1 &  1 & 1 &   1 &  1 & 0 \\
+      0 & -2 & 1 &  -3 &  2 & 0 \\
+      0 &  0 & 3 &   3 &  8 & 0 \\
+      0 &  0 & 0 & -12 &  8 & 0 \\
+      0 &  0 & 0 &   0 & 40 & 0
+    \end{array}
+  \right)
+  $
+  \\
+  Нет нулевых строк $\rightarrow$ все неизвестные - константы. \\
+  Итого:
+  $
+  \left(
+    \begin{array}{r}
+      x_1 \\
+      x_2 \\
+      x_3 \\
+      x_4 \\
+      x_5
+    \end{array}
+  \right)
+  =
+  \left(
+    \begin{array}{r}
+      0 \\
+      0 \\
+      0 \\
+      0 \\
+      0
+    \end{array}
+  \right)
+  $
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Задача 4
 \begin{problem}{443(b)}
-Решить систему уравнений:\\
-$\left\{\begin{array}{l}
-x_1+3x_2+4x_3\\
-2x_1-x_2+3x_3=0\\
-3x_1-5x_2+4x_3=0\\
-x_1+17x_2+4x_3
-\end{array}\right.$
+  Решить систему уравнений:\\
+  $\left\{\begin{array}{l}
+      x_1+3x_2+4x_3\\
+      2x_1-x_2+3x_3=0\\
+      3x_1-5x_2+4x_3=0\\
+      x_1+17x_2+4x_3
+  \end{array}\right.$
 
 
 \end{problem}
 \begin{solution}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ваше решение задачи здесь
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %% Ваше решение задачи здесь
 
+  $
+  \left(
+    \begin{array}{rrrrrrrr}
+      1 &  3 & 4 & 0 \\
+      2 & -1 & 3 & 0 \\
+      3 & -5 & 4 & 0 \\
+      1 & 17 & 4 & 0 \\
+    \end{array}
+  \right)
+  \rightarrow
+  \left(
+    \begin{array}{rrrrrrrr}
+      1 &   3 &  4 & 0 \\
+      0 &  -7 & -5 & 0 \\
+      0 & -14 & -8 & 0 \\
+      0 &  14 &  0 & 0 \\
+    \end{array}
+  \right)
+  \rightarrow
+  \left(
+    \begin{array}{rrrrrrrr}
+      1 &  3 &  4 & 0 \\
+      0 & -7 & -5 & 0 \\
+      0 &  0 &  2 & 0 \\
+      0 &  0 &  0 & 0 \\
+    \end{array}
+  \right)
+  $ \\
+Кол-во ненулевых строк совпадает с кол-вом переменных \\ $\rightarrow$ все неизвестные - константы. \\
+Итого:
 $
 \left(
-\begin{array}{rrrrrrrr}
-1 &  3 & 4 & 0 \\
-2 & -1 & 3 & 0 \\
-3 & -5 & 4 & 0 \\
-1 & 17 & 4 & 0 \\
-\end{array}
+  \begin{array}{r}
+    x_1 \\
+    x_2 \\
+    x_3 \\
+  \end{array}
 \right)
-\rightarrow
+=
 \left(
-\begin{array}{rrrrrrrr}
-1 &   3 &  4 & 0 \\
-0 &  -7 & -5 & 0 \\
-0 & -14 & -8 & 0 \\
-0 &  14 &  0 & 0 \\
-\end{array}
-\right)
-\rightarrow
-\left(
-\begin{array}{rrrrrrrr}
-1 &  3 &  4 & 0 \\
-0 & -7 & -5 & 0 \\
-0 &  0 &  2 & 0 \\
-0 &  0 &  0 & 0 \\
-\end{array}
+  \begin{array}{r}
+    0 \\
+    0 \\
+    0 \\
+  \end{array}
 \right)
 $
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Задача 5
 \begin{problem}{449(c)}
-Выписать фундаментальную систему решений:\\
-$\left\{\begin{array}{l}
-3x_1+2x_2+x_3=0\\
-3x_2+2x_3+x_4=0\\
-3x_1-4x_2-3x_3-2x_4=0
-\end{array}\right.$
+  Выписать фундаментальную систему решений:\\
+  $\left\{\begin{array}{l}
+      3x_1+2x_2+x_3=0\\
+      3x_2+2x_3+x_4=0\\
+      3x_1-4x_2-3x_3-2x_4=0
+  \end{array}\right.$
 
 \end{problem}
 \begin{solution}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ваше решение задачи здесь
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %% Ваше решение задачи здесь
 
-$
-\left(
-\begin{array}{rrrrrrrr}
-3 &  2 &  1 &  0 & 0\\
-0 &  3 &  2 &  1 & 0\\
-3 & -4 & -3 & -2 & 0\\
-\end{array}
-\right)
-\rightarrow
-\left(
-\begin{array}{rrrrrrrr}
-3 &  2 &  1 &  0 & 0\\
-0 &  3 &  2 &  1 & 0\\
-0 & -6 & -4 & -2 & 0\\
-\end{array}
-\right)
-\rightarrow
-\left(
-\begin{array}{rrrrrrrr}
-3 & 2 & 1 & 0 & 0\\
-0 & 3 & 2 & 1 & 0\\
-0 & 0 & 0 & 0 & 0\\
-\end{array}
-\right)
-$
-\\
-Осталось 2 ненулевые строчки и 4 неизвестные $\rightarrow$ будет 2 независимые переменные ($x_3, x_4$) \\
-Итого:
-$
-\left(
-\begin{array}{r}
-x_1 \\
-x_2 \\
-x_3 \\
-x_4 \\
-\end{array}
-\right)
-=
-\left(
-\begin{array}{r}
--\frac{1}{9} \\
--\frac{2}{3} \\
-1 \\
-0 \\
-\end{array}
-\right)
-x_3 +
-\left(
-\begin{array}{r}
-\frac{1}{9} \\
--\frac{1}{3} \\
-0 \\
-1 \\
-\end{array}
-\right)
-x_4 +
-\left(
-\begin{array}{r}
-0 \\
-0 \\
-0 \\
-0 \\
-\end{array}
-\right)
-$
+  $
+  \left(
+    \begin{array}{rrrrrrrr}
+      3 &  2 &  1 &  0 & 0\\
+      0 &  3 &  2 &  1 & 0\\
+      3 & -4 & -3 & -2 & 0\\
+    \end{array}
+  \right)
+  \rightarrow
+  \left(
+    \begin{array}{rrrrrrrr}
+      3 &  2 &  1 &  0 & 0\\
+      0 &  3 &  2 &  1 & 0\\
+      0 & -6 & -4 & -2 & 0\\
+    \end{array}
+  \right)
+  \rightarrow
+  \left(
+    \begin{array}{rrrrrrrr}
+      3 & 2 & 1 & 0 & 0\\
+      0 & 3 & 2 & 1 & 0\\
+      0 & 0 & 0 & 0 & 0\\
+    \end{array}
+  \right)
+  $
+  \\
+  Осталось 2 ненулевые строчки и 4 неизвестные $\rightarrow$ будет 2 независимые переменные ($x_3, x_4$) \\
+  Итого:
+  $
+  \left(
+    \begin{array}{r}
+      -\frac{1}{9} \\
+      -\frac{2}{3} \\
+      1 \\
+      0 \\
+    \end{array}
+  \right)
+  x_3 ;
+  \left(
+    \begin{array}{r}
+      \frac{1}{9} \\
+      -\frac{1}{3} \\
+      0 \\
+      1 \\
+    \end{array}
+  \right)
+  x_4
+  $
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Задача 6
 \begin{problem}{449(d)}
-Выписать фундаментальную систему решений:\\
-$\left\{\begin{array}{l}
-x_1+x_2+x_3+2x_4=0
-\end{array}\right.$
+  Выписать фундаментальную систему решений:\\
+  $\left\{\begin{array}{l}
+      x_1+x_2+x_3+2x_4=0
+  \end{array}\right.$
 
 \end{problem}
 \begin{solution}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Ваше решение задачи здесь
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %% Ваше решение задачи здесь
 
-$
-\left(
-\begin{array}{rrrrrrrr}
-3 & 2 & 1 & 0 & 0\\
-0 & 3 & 2 & 1 & 0\\
-0 & 0 & 0 & 0 & 0\\
-\end{array}
-\right)
-\rightarrow
-$
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{solution}
 
 %------------------------------------------------
