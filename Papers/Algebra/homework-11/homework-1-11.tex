@@ -77,16 +77,42 @@ $\left(\begin{array}{rrr}2 & 5 & -6 \\ 4 & 6 & -9 \\ 3 & 6 & -8 \end{array}\righ
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ваше решение задачи здесь
 
+  $
+det(A-\lambda E) = \left|\begin{array}{rrr}2-\lambda & 5 & -6 \\ 4 & 6-\lambda & -9 \\ 3 & 6 & -8-\lambda \end{array}\right| = \left|\begin{array}{rrr}2-\lambda & 5 & -6 \\ 1 & -\lambda & \lambda-1 \\ 3 & 6 & -8-\lambda \end{array}\right| = \left|\begin{array}{rrr}2-\lambda & 5 & -1 \\ 1 & -\lambda & -1 \\ 3 & 6 & -2-\lambda \end{array}\right| = \left|\begin{array}{rrr}1-\lambda & 5+\lambda & 0 \\ 1 & -\lambda & -1 \\ 3 & 6 & -2-\lambda \end{array}\right| = (1-\lambda)\left|\begin{array}{rr}-\lambda & -1 \\ 6 & -2-\lambda \end{array}\right| - (5+\lambda)\left|\begin{array}{rr}1 & -1 \\ 3 & -2-\lambda \end{array}\right| = (1-\lambda)(\lambda^2+2\lambda+6)-(5+\lambda)(-2-\lambda+3)=1-\lambda^3
 $
-\left|
-\begin{array}{rrr}
-2 - \lambda & 5 & -6 \\
-4 & 6 - \lambda & -9 \\
-3 & 6 & -8 - \lambda
-\end{array}
-\right|
-=
+\\
+$\displaystyle
+f(\lambda) = 0 \Rightarrow \lambda = 1$
+\\
+$\displaystyle
+\lambda = 1: \left(\begin{array}{rrr}1 & 5 & -6 \\ 4 & 5 & -9 \\ 3 & 6 & -9 \end{array}\right)X=0$
+\\
+$\displaystyle
+\left(\begin{array}{rrr}1 & 5 & -6 \\ 4 & 5 & -9 \\ 3 & 6 & -9 \end{array}\right|\left.\begin{array}{rrr}0\\0 \\0 \end{array}\right)_{S_2-4S_1;S_3-3S_1}\Rightarrow\left(\begin{array}{rrr}1 & 5 & -6 \\ 0 & -15 & 15 \\ 0 & -9 & 9 \end{array}\right|\left.\begin{array}{rrr}0\\0 \\0 \end{array}\right)_{5S_3-3S_2}\Rightarrow\left(\begin{array}{rrr}1 & 5 & -6 \\ 0 & -15 & 15 \\ 0 & 0 & 0 \end{array}\right|\left.\begin{array}{rrr}0\\0 \\0 \end{array}\right)
 $
+\\
+$\displaystyle
+\left\{
+\begin{aligned}
+x_1+5x_2-6x_3=0 \\
+-15x_2+15x_3=0 
+\end{aligned}
+\right.
+\Rightarrow
+\left\{
+\begin{aligned}
+x_1=x_3 \\
+x_2=x_3 
+\end{aligned}
+\right.
+\Rightarrow
+\\
+\left(\begin{array}{r}x_1\\x_2\\x_3\end{array}\right)=\left(\begin{array}{r}1\\1\\1\end{array}\right)x_3
+\Rightarrow
+\vartheta=\left(\begin{array}{rrr}1 & 1 & 1\end{array}\right)^{T}
+$
+\\
+Ответ: $\displaystyle \lambda=1;\vartheta=\left(\begin{array}{rrr}1 & 1 & 1\end{array}\right)^{T}$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{solution}
@@ -180,21 +206,13 @@ $
 \\
 Итого: \\
 $
-z
+\lambda = 0 \\
+v =
 \left(
 \begin{array}{rrrr}
 \frac{3}{2} \\
 -\frac{1}{2} \\
 1
-\end{array}
-\right)
-=
-z
-\left(
-\begin{array}{rrrr}
-3 \\
--1 \\
-2
 \end{array}
 \right)
 $
@@ -213,16 +231,117 @@ $\left(\begin{array}{rrrr}0 & 1 & 1 & -1 \\ 1 & 0 & -1 & 1 \\ 1 & -1 & 0 & 1 \\ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ваше решение задачи здесь
 
+$\displaystyle
+det(A-\lambda E) = \left|\begin{array}{rrrr}-\lambda & 1 & 1 & -1 \\ 1 & -\lambda & -1 & 1 \\ 1 & -1 & -\lambda & 1 \\ -1 & 1 & 1 & -\lambda \end{array}\right|_{S_4+S_3}
+=
+\left|\begin{array}{rrrr}-\lambda & 1 & 1 & -1 \\ 1 & -\lambda & -1 & 1 \\ 1 & -1 & -\lambda & 1 \\ 0 & 0 & 1 - \lambda & 1 - \lambda \end{array}\right|
+=
 $
-\left(
-\begin{array}{rrrr}
-0 & 1 & 1 & -1 \\
-1 & 0 & -1 & 1 \\
-1 & -1 & 0 & 1 \\
--1 & 1 & 1 & 0
-\end{array}
-\right)
+\\
+$\displaystyle
+(1-\lambda)(-1)^{4+3}\left|\begin{array}{rrr}-\lambda & 1 & -1 \\ 1 & -\lambda & 1 \\ 1 & -1 & 1\end{array}\right|
++
+(1-\lambda)(-1)^{4+4}\left|\begin{array}{rrr}-\lambda & 1 & 1 \\ 1 & -\lambda & -1 \\ 1 & -1 & -\lambda\end{array}\right|
+=
 $
+\\
+$\displaystyle
+(\lambda-1)(\lambda^2-2\lambda+1)+(1-\lambda)(-\lambda^3+3\lambda-2)
+=
+\lambda^4-6\lambda^2+8\lambda-3=(\lambda-1)^3(\lambda+3)
+$
+\\
+$\displaystyle
+f(\lambda) = 0
+\Rightarrow
+\left[
+\begin{gathered}
+\lambda = 1,\\
+\lambda = -3
+\end{gathered}
+\right.
+$
+\\
+$\displaystyle
+\lambda = 1: \left(\begin{array}{rrrr}-1 & 1 & 1 & -1 \\ 1 & -1 & -1 & 1 \\ 1 & -1 & -1 & 1 \\ -1 & 1 & 1 & -1 \end{array}\right)X=0$
+\\
+$\displaystyle
+\left(\begin{array}{rrrr}-1 & 1 & 1 & -1 \\ 1 & -1 & -1 & 1 \\ 1 & -1 & -1 & 1 \\ -1 & 1 & 1 & -1 \end{array}\right|\left.\begin{array}{r}0 \\ 0 \\ 0 \\ 0 \end{array}\right)
+\Rightarrow
+\left(\begin{array}{rrrr}-1 & 1 & 1 & -1 \\ 1 & -1 & -1 & 1 \\ 1 & -1 & -1 & 1 \\ -1 & 1 & 1 & -1 \end{array}\right|\left.\begin{array}{r}0 \\ 0 \\ 0 \\ 0 \end{array}\right)_{S_2+S_1;S_3+S_1;S_4-S_1}
+\Rightarrow
+\left(\begin{array}{rrrr}-1 & 1 & 1 & -1 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{array}\right|\left.\begin{array}{r}0 \\ 0 \\ 0 \\ 0 \end{array}\right)
+$
+\\
+$\displaystyle
+-x_1+x_2+x_3-x_4=0
+\Rightarrow
+x_1=-x_2-x_3+x_4
+$
+\\
+$\displaystyle
+\left(\begin{array}{r}x_1\\x_2\\x_3\\x_4\end{array}\right)=\left(\begin{array}{r}-1\\1\\0\\0\end{array}\right)x_2
++
+\left(\begin{array}{r}-1\\0\\1\\0\end{array}\right)x_3
++
+\left(\begin{array}{r}1\\0\\0\\1\end{array}\right)x_4
+$
+\\
+$\displaystyle
+\vartheta_1=\left(\begin{array}{r}-1\\1\\0\\0\end{array}\right); \vartheta_2=\left(\begin{array}{r}-1\\0\\1\\0\end{array}\right); \vartheta_3=\left(\begin{array}{r}1\\0\\0\\1\end{array}\right)
+$
+\\
+$\displaystyle
+\lambda = -3: \left(\begin{array}{rrrr}3 & 1 & 1 & -1 \\ 1 & 3 & -1 & 1 \\ 1 & -1 & 3 & 1 \\ -1 & 1 & 1 & 3 \end{array}\right)X=0$
+\\
+$\displaystyle
+\left(\begin{array}{rrrr}3 & 1 & 1 & -1 \\ 1 & 3 & -1 & 1 \\ 1 & -1 & 3 & 1 \\ -1 & 1 & 1 & 3 \end{array}\right|\left.\begin{array}{r}0 \\ 0 \\ 0 \\ 0 \end{array}\right)_{3S_2-S_1;3S_3-S_1;3S_4+S_1}
+\Rightarrow
+\left(\begin{array}{rrrr}3 & 1 & 1 & -1 \\ 0 & 8 & -6 & 6 \\ 0 & -6 & 8 & 6 \\ 0 & 4 & 4 & 8 \end{array}\right|\left.\begin{array}{r}0 \\ 0 \\ 0 \\ 0 \end{array}\right)
+\Rightarrow
+$
+\\
+$\displaystyle
+\left(\begin{array}{rrrr}3 & 1 & 1 & -1 \\ 0 & 8 & -6 & 6 \\ 0 & -6 & 8 & 6 \\ 0 & 4 & 4 & 8 \end{array}\right|\left.\begin{array}{r}0 \\ 0 \\ 0 \\ 0 \end{array}\right)_{4S_3+3S_2;2S_4-S_2}
+\Rightarrow
+\left(\begin{array}{rrrr}3 & 1 & 1 & -1 \\ 0 & 8 & -6 & 6 \\ 0 & 0 & 14 & 42 \\ 0 & 0 & 14 & 10 \end{array}\right|\left.\begin{array}{r}0 \\ 0 \\ 0 \\ 0 \end{array}\right)_{S_4-S_3}
+\Rightarrow
+\left(\begin{array}{rrrr}3 & 1 & 1 & -1 \\ 0 & 8 & -6 & 6 \\ 0 & 0 & 14 & 42 \\ 0 & 0 & 0 & -32 \end{array}\right|\left.\begin{array}{r}0 \\ 0 \\ 0 \\ 0 \end{array}\right)
+$
+\\
+$\displaystyle
+\left\{
+\begin{aligned}
+3x_1+x_2+x_3-x_4=0 \\
+8x_2-6x_3+6x_4=0 \\
+14x_3+42x_4=0 \\
+-32x_4=0
+\end{aligned}
+\right.
+\Rightarrow
+\left\{
+\begin{aligned}
+x_1=0 \\
+x_2=0 \\
+x_3=0 \\
+x_4=0
+\end{aligned}
+\right.
+$
+
+$
+\\
+\displaystyle
+\left(\begin{array}{r}x_1\\x_2\\x_3\\x_4\end{array}\right)=\left(\begin{array}{r}0\\0\\0\\0\end{array}\right)
+$
+\\
+$\displaystyle
+\vartheta_1=\left(\begin{array}{r}0\\0\\0\\0\end{array}\right)
+$
+\\
+Ответ: $\displaystyle
+\lambda_1=1; \vartheta_1=\left(\begin{array}{r}-1\\1\\0\\0\end{array}\right); \vartheta_2=\left(\begin{array}{r}-1\\0\\1\\0\end{array}\right); \vartheta_3=\left(\begin{array}{r}1\\0\\0\\1\end{array}\right);
+\lambda_2=-3; \vartheta_4=\left(\begin{array}{r}0\\0\\0\\0\end{array}\right)$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{solution}
@@ -238,7 +357,99 @@ $\left( \begin{array}{rrrrrrr}0 & 1 & 0 & \ldots & 0 & 0 & 0\\ -1 & 0 & 1 & \ldo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ваше решение задачи здесь
 
-
+$\displaystyle
+det(A-\lambda E)
+=
+\left| \begin{array}{rrrrrrr}-\lambda & 1 & 0 & \ldots & 0 & -\lambda & 0\\ -1 & 0 & 1 & \ldots & 0 & 0 & 0 \\ 0 & -1 & -\lambda & \ldots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & \ldots & -\lambda & 1 & 0 \\ 0 & 0 & 0 & \ldots & -1 & -\lambda & 1 \\ 0 & 0 & 0 & \ldots & 0 & -1 & -\lambda \end{array} \right|
+=
+-\lambda\left| \begin{array}{rrrrrrr} 0 & 1 & 0 & \ldots & 0 & 0 & 0 \\ -1 & -\lambda & 1 & \ldots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & \ldots & -\lambda & 1 & 0 \\ 0 & 0 & 0 & \ldots & -1 & -\lambda & 1 \\ 0 & 0 & 0 & \ldots & 0 & -1 & -\lambda \end{array} \right|
++
+1(-1)^{1+1}\left| \begin{array}{rrrrrrr}-1 & 1 & 0 & \ldots & 0 & 0 & 0 \\ 0 & -\lambda & 1 & \ldots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & \ldots & -\lambda & 1 & 0 \\ 0 & 0 & 0 & \ldots & -1 & -\lambda & 1 \\ 0 & 0 & 0 & \ldots & 0 & -1 & -\lambda \end{array} \right|
+=-\lambda\bigtriangleup_{n-1}+\bigtriangleup_{n-2}
+$
+\\
+Получаем рекуррентную формулу: $\displaystyle
+\bigtriangleup_{n}=-\lambda\bigtriangleup_{n-1}+\bigtriangleup_{n-2}
+\bigtriangleup_2=-\lambda\bigtriangleup_1+\bigtriangleup_0
+$
+\\
+$\displaystyle
+\bigtriangleup_2=\lambda^2+1;\bigtriangleup_1=-\lambda$
+\\
+$\displaystyle
+\bigtriangleup_0=1$
+\\
+$\displaystyle
+G(z)=\frac{c_0+c_1z-\alpha c_0z}{1-\alpha z-\beta z^2}; Возьмем \alpha=-\lambda; \beta=1$
+\\
+$\displaystyle
+G(z)=\frac{1-\lambda z+\lambda z}{1+\lambda z-z^2}$
+\\
+$\displaystyle
+z_{1|2}=\frac{-\lambda\pm\sqrt{\lambda^2+4}}{-2}=\frac{\lambda\mp\sqrt{\lambda^2+4}}{2}$
+\\
+Пусть $z_{1|2}=\cos{\theta}+i\sin{\theta}$
+\\
+$\displaystyle
+\frac{\lambda\mp\sqrt{\lambda^2+4}}{2}=\cos{\theta}+i\sin{\theta}\Rightarrow\lambda^2+4=4(\cos{2\theta}+i\sin{2\theta})-4\lambda(\cos{\theta}+i\sin{\theta})+\lambda^2\Rightarrow$
+\\
+$\displaystyle
+1=\cos{2\theta}-\lambda\cos{\theta}\Rightarrow\lambda=\frac{\cos{2\theta}-1}{\cos{\theta}}$
+\\
+$\displaystyle
+\frac{1}{1+\lambda z - z^2} = \frac{A}{z_1-z}+\frac{B}{z_2-z}=\frac{A(z_2-z)+B(z_1-z)}{(z_1-z)(z_2-z)}\Rightarrow$
+\\
+$\displaystyle
+\left\{
+\begin{aligned}
+A(z_2-z_1)=1 \\
+B(z_1-z_2)=1 
+\end{aligned}
+\right.
+\Rightarrow
+\left\{
+\begin{aligned}
+A=\frac{i}{2\sin{\theta}} \\
+B=-\frac{i}{2\sin{\theta}} 
+\end{aligned}
+\right.
+$
+\\
+$\displaystyle
+\bigtriangleup_n=\frac{A}{z_1^{n+1}}+\frac{B}{z_2^{n+1}}=\frac{i}{2\sin{\theta}}\frac{1}{(\cos{\theta}+i\sin{\theta})^{n+1}}-\frac{i}{2\sin{\theta}}\frac{1}{(\cos{\theta}-i\sin{\theta})^{n+1}}
+=
+\frac{i}{2\sin{\theta}}\bigl(\frac{1}{(\cos{\theta}+i\sin{\theta})^{n+1}}-\frac{1}{(\cos{\theta}-i\sin{\theta})^{n+1}}\bigr)
+=
+\frac{i}{2\sin{\theta}}\frac{-2i\sin{\theta}(n+1)}{\cos^2{\theta}(n+1)+\sin^2{\theta}(n+1)}
+=
+\frac{\sin{\theta}(n+1)}{\sin{\theta}(\cos^2{\theta}(n+1)+\sin^2{\theta})}
+=
+\frac{\sin{\theta}(n+1)}{\sin{\theta}}
+\Rightarrow
+\bigtriangleup_n=\frac{\sin{\theta}(n+1)}{\sin{\theta}}
+$
+\\
+$\displaystyle
+\bigtriangleup_nX=0$
+\\
+$\displaystyle
+fracsin(\theta)(n+1)\sin{\theta}=0$
+\\
+$\displaystyle
+\sin{\theta}(n+1)=0$
+\\
+$\displaystyle
+\theta(n+1)=\frac{\pi}{2}+2\pi k, k\in Z$
+\\
+$\displaystyle
+\theta=\frac{\pi+4\pi k}{2(n+1)}, k\in Z$
+\\
+В итоге получаем, что $\displaystyle
+\theta=\frac{\cos{\frac{\pi+4\pi k}{(n+1)}}-1}{\cos{\frac{\pi+4\pi k}{2(n+1)}}}$
+\\
+Ответ: $\displaystyle
+\theta=\frac{\cos{\frac{\pi+4\pi k}{(n+1)}}-1}{\cos{\frac{\pi+4\pi k}{2(n+1)}}}
+$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{solution}
@@ -254,7 +465,111 @@ $\left( \begin{array}{rrrrrr}-1 & 1 & 0 & \ldots & 0 & 0 \\ 1 & 0 & 1 & \ldots &
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ваше решение задачи здесь
 
-
+$
+\left( 
+\begin{array}{rrrrrr}
+-1-\lambda & 1 & 0 & \ldots & 0 & 0 \\
+1 & -\lambda & 1 & \ldots & 0 & 0 \\
+0 & 1 & -\lambda & \ldots & 0 & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+0 & 0 & 0 & \ldots & -\lambda & 1 \\
+0 & 0 & 0 & \ldots & 1 & -\lambda
+\end{array}
+\right)
+=
+$
+$
+(-1-\lambda)\left(\begin{array}{rrrrrr}-\lambda & 1 & \ldots & 0 & 0 \\1 & -\lambda & \ldots & 0 & 0 \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\0 & 0 & \ldots & -\lambda & 1 \\0 & 0 & \ldots & 1 & -\lambda
+\end{array}\right)
+-
+$
+\\
+$
+\left(\begin{array}{rrrrrr}-\lambda & 1 & \ldots & 0 & 0 \\0 & -\lambda & \ldots & 0 & 0 \\\vdots & \vdots & \ddots & \vdots & \vdots \\0 & 0 & \ldots & -\lambda & 1 \\0 & 0 & \ldots & 1 & -\lambda\end{array}\right)
+=
+-
+\left(\begin{array}{rrrrrr}-\lambda & 1 & \ldots & 0 & 0 \\1 & -\lambda & \ldots & 0 & 0 \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\0 & 0 & \ldots & -\lambda & 1 \\0 & 0 & \ldots & 1 & -\lambda
+\end{array}\right)
+-
+\left(\begin{array}{rrrrrr}-\lambda & 1 & \ldots & 0 & 0 \\1 & -\lambda & \ldots & 0 & 0 \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\0 & 0 & \ldots & -\lambda & 1 \\0 & 0 & \ldots & 1 & -\lambda
+\end{array}\right)
+$
+\\
+$\displaystyle
+\left(\begin{array}{rrrrrr}-\lambda & 1 & \ldots & 0 & 0 \\1 & -\lambda & \ldots & 0 & 0 \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\0 & 0 & \ldots & -\lambda & 1 \\0 & 0 & \ldots & 1 & -\lambda
+\end{array}\right) = \bigtriangleup_n$
+\\
+$\displaystyle
+\bigtriangleup_n=-\lambda\bigtriangleup_{n-1}-\bigtriangleup_{n-2}$
+\\
+$\displaystyle G(z) = \frac{c_0 + c_1z - \alpha c_0z}{1 - \alpha z - \beta z^2}
+\\
+\alpha = -\lambda; \beta = -1
+\\
+c_0 = 1; c_1=-\lambda; c_2 = \lambda^2 - 1
+$
+\\
+$\displaystyle
+G(z) = \frac{1}{1 + \lambda z + z^2}
+$
+\\
+$\displaystyle
+z_{1|2} = \frac{\lambda \pm \sqrt{\lambda^2 - 4}}{2}$
+\\
+Пусть 
+$\displaystyle
+z_{1|2}=\cos{\theta}\pm i\sin{\theta}$
+\\
+$\displaystyle
+\frac{\lambda \pm \sqrt{\lambda^2 - 4}}{2}=\cos{\theta}\pm i\sin{\theta}
+\\
+\lambda^2 - 4 = 4(cos2\theta + isin2\theta) + 4\lambda(cos\theta + isin\theta) + \lambda^2\\
+-1 = \cos2\theta + \lambda \cos\theta\\
+\lambda = \frac{-1 - cos2\theta}{cos\theta}\\
+\frac{1}{1 + \lambda z + z^2} = \frac{A(z_2 - z) + B(z_1 - z)}{(z_1 - z)(z_2 - z)}
+\\
+\left\{
+\begin{aligned}
+A(z_2-z_1) = 1\\
+B(z_1-z_2) = 1
+\end{aligned}
+\right.
+;
+\left\{
+\begin{aligned}
+A = \frac{i}{2sin\theta}\\
+B = -\frac{i}{2sin\theta}
+\end{aligned}
+\right.
+\\
+\bigtriangleup_{n-1} = \frac{A}{z_1^n} + \frac{B}{z_2^n}
+=
+\frac{i}{2\sin{\theta}}\bigl(\frac{1}{(\cos{\theta}+i\sin{\theta})^n} - \frac{1}{(\cos{\theta}-i\sin{\theta})^n}\bigr)
+=
+\frac{\sin{\theta n}}{\sin{\theta}(\cos^2{\theta n} + \sin^2{\theta n})}
+=
+\frac{\sin{\theta n}}{\sin{\theta}}\\
+$
+$
+\displaystyle
+\bigtriangleup_{n-2} = \frac{sin\theta(n-1)}{sin\theta}
+$
+\\
+$\displaystyle
+-\frac{sin\theta n}{sin\theta} - \frac{sin\theta(n-1)}{sin\theta} = 0
+\Rightarrow
+-\sin{\theta n} = \sin({\theta n - \theta})
+\Rightarrow
+\theta = -\pi
+$
+\\
+$\displaystyle
+\lambda = \frac{-1 - cos2\theta}{cos\theta} = 2\\
+$ Ответ: 2
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{solution}
@@ -270,7 +585,77 @@ $\left( \begin{array}{rrrrr}0 & x & x & \ldots & x \\ y & 0 & x & \ldots & x \\ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ваше решение задачи здесь
 
-
+$\displaystyle
+\left( 
+\begin{array}{rrrrr}
+-\lambda & x & x & \ldots & x \\
+y & -\lambda & x & \ldots & x \\ 
+y & y & -\lambda & \ldots & x \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+y & y & y & \ldots & -\lambda 
+\end{array} 
+\right)_{S_{i+1} - S_i, i=\overline{1, n}}
+\rightarrow
+\left( 
+\begin{array}{rrrrr}
+-\lambda & x & x & \ldots & x \\
+y + \lambda & -\lambda - x & 0 & \ldots & 0 \\ 
+0 & y + \lambda & -\lambda - x & \ldots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & 0 & \ldots & -\lambda - x
+\end{array} 
+\right)
+$
+\\
+$\displaystyle
+-\lambda
+\left( 
+\begin{array}{rrrrr}
+-\lambda - x & 0 & \ldots & 0 \\ 
+y + \lambda & -\lambda - x & \ldots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \ldots & -\lambda - x 
+\end{array} 
+\right)
+-x
+\left( 
+\begin{array}{rrrrr}
+-\lambda - x & 0 & \ldots & 0 \\ 
+0 & -\lambda - x & \ldots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \ldots & -\lambda - x 
+\end{array} 
+\right)
+\ldots\\
+-\lambda(-\lambda - x)^{n-1} - x(y + \lambda)(-\lambda - x)^{n-2} + \ldots$
+\\
+При четном n
+$\displaystyle
+\\
+det(A-\lambda E) = -\lambda(-\lambda - x)^{n-1} - x(y + \lambda)(\lambda - x)^{n-2}
+\\
+-\lambda(-\lambda - x)^{n-1} - x(y + \lambda)(- \lambda - x)^{n-2} = 0
+\\
+\lambda_1 = \sqrt{xy}
+\\
+\lambda_2 = -\sqrt{xy}
+$
+\\
+При нечетном n
+\\
+$
+det(A-\lambda E) = -\lambda(-\lambda - x)^{n-1}
+\\
+-\lambda(-\lambda - x)^{n-1} = 0
+\\
+\lambda_1 = 0
+\\
+\lambda_2 = -x
+$
+\\
+Ответ: 
+\\
+$1) \lambda_1 = \sqrt{xy}; \lambda_2 = -\sqrt{xy}\\ 2)\lambda_1 = 0; \lambda_2 = -x$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{solution}

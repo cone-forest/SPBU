@@ -42,23 +42,23 @@
 
 \fancyhead[C]{}
 \hrule \medskip % Upper rule
-\begin{minipage}{0.295\textwidth} 
+\begin{minipage}{0.295\textwidth}
 \raggedright\footnotesize
-Цуканов Михаил \hfill\\   
+Цуканов Михаил \hfill\\
 st117303 \hfill\\
 st117303@student.spbu.ru
 \end{minipage}
-\begin{minipage}{0.4\textwidth} 
-\centering\large 
-Homework Assignment 5\\ 
-\normalsize 
-Алгебра и геометрия, 1 семестр\\ 
+\begin{minipage}{0.4\textwidth}
+\centering\large
+Homework Assignment 5\\
+\normalsize
+Алгебра и геометрия, 1 семестр\\
 \end{minipage}
-\begin{minipage}{0.295\textwidth} 
+\begin{minipage}{0.295\textwidth}
 \raggedleft
 \today\hfill\\
 \end{minipage}
-\medskip\hrule 
+\medskip\hrule
 \bigskip
 
 %------------------------------------------------
@@ -97,7 +97,7 @@ $
 $
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{solution} 
+\end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Задача 2
@@ -108,47 +108,50 @@ $
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ваше решение задачи здесь
 
-Воспользуемся теоремой Виета: \\
-$
-\sum_{i=1}^{n}x_i = -a_1 \\
-\sum_{i=1, j=1, \neq{i}{j}}^{n}x_i*x_j = a_2 \\
-$
-Тогда  \\
-$-a_1$ - сумма арифметической прогрессии \\
-$a_2$ - сумма таблицы умножения этой прогрессии без главной диагонали \\
-$
--a_1 = x_0*n + d\frac{n(n-1)}{2} \\
-a_2 =
-\sum_{i=0, j=0, \neq{i}{j}}^{n - 1}(x_0 + jd)*(x_0 + id) =
-\sum_{i=0, j=0, \neq{i}{j}}^{n - 1}(x_0^2 + dx_0(i + j) + ijd^2) = \\
-n(n - 1)x_0^2 + dx_0\sum_{i=0, j=0, \neq{i}{j}}^{n - 1}(i + j) + d^2\sum_{i=1, j=1, \neq{i}{j}}^{n - 1}(ij)\\
-$
-Осталось узнать суммы таблиц суммы и умножения без главных диагоналей и решить получившуюся систему. \\
-Сумма таблицы сложения без главной диагонали \\
-$n * n(n + 1) - \frac{n(n+1)}{2} = (n-\frac{1}{2})n(n+1)$
-Сумма таблицы умножения без главной диагонали \\
-$
-\sum_{i = 1}^{n}\frac{n(n+1)}{2}i - \sum_{i = 1}^{n}i^2 =
-\frac{n^2(n+1)^2}{4} - \frac{2n(n+1)(2n+1)}{3} = 
-$
+По теореме Виета мы знаем, что коэффициент при $\displaystyle x^{n-1}$ равен сумме всех корней, а так как корни образуют арифметическую прогрессию, то этот коэффициент с минусом равен формуле суммы арифметической прогресии, то есть $\displaystyle -a_1 = \frac{x_1 + x_n}{2}n$
+\\
+Разность прогресси по формуле равна $\displaystyle\frac{x_1 + x_n}{n + 1}$
+\\
+$\displaystyle -a_1 = \frac{x_1 + x_n}{2}n \Rightarrow -\frac{2a_1}{n} = x_1 + x_n \Rightarrow -\frac{2a_1}{n(n + 1)} = \frac{x_1 + x_n}{n + 1}$
+\\
+$\displaystyle d = -\frac{2a_1}{n(n + 1)}$
+\\
+$\displaystyle S = \frac{2x_1 + d(n - 1)}{2}n = -a_1$
+\\
+$\displaystyle - \frac{2a_1}{n} = 2x_1 + d(n - 1) \Rightarrow -\frac{2a_1}{n} - d(n - 1) = 2x_1 \Rightarrow x_1 = \frac{-\frac{2a_1}{n} - d(n - 1)}{2}$
+\\
+$\displaystyle x_1 = \frac{-\frac{2a_1}{n} + \frac{2a_1(n - 1)}{n(n + 1)}}{2} = \frac{-2a_1(n + 1) + 2a_1(n - 1)}{2n(n + 1)} = \frac{-2a_1}{n(n + 1)}$
+\\
+$\displaystyle x_n = x_1 + (n - 1)d = \frac{-2a_1}{n(n + 1)} + (n - 1)\biggl(-\frac{2a_1}{n(n + 1)}\biggr) = \frac{-2a_1 - 2a_1(n - 1)}{n(n + 1)} = -\frac{2a_1}{n + 1}$
+\\
+Ответ: $\displaystyle -\frac{2a_1}{n + 1}$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{solution} 
+\end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Задача 3
 \begin{problem}{621}
-Составить уравнение $6$-й степени, имеющее корни 
+Составить уравнение $6$-й степени, имеющее корни
 $\alpha$, $\frac{1}{\alpha}$, $1-\alpha$, $\frac{1}{1-\alpha}$, $1-\frac{1}{\alpha}$, $\frac{1}{1-\frac{1}{\alpha}}$.
 \end{problem}
 \begin{solution}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ваше решение задачи здесь
 
-
+$
+(x-\alpha)
+(x-\frac{1}{\alpha})
+(x-1+\alpha)
+(x-\frac{1}{1-\alpha})
+(x-1+\frac{1}{\alpha})
+(x-\frac{1}{1-\frac{1}{\alpha}}) = \\
+x^6+ax^5+bx^4+cx^3+dx^2+ex^1+1 = \\
+x^6 + 3x^5 +\frac{-\alpha^6+5\alpha^5-8\alpha^4+10\alpha^3-15\alpha^2+11\alpha-3}{(\alpha^2-\alpha)^2}x^4 + \frac{2\alpha^6-6\alpha^5+5\alpha^4+5\alpha^2-6\alpha+2}{(\alpha^2-\alpha)^2}x^3 + \frac{-\alpha^6+5\alpha^5-8\alpha^4+10\alpha^3-15\alpha^2+11\alpha-3}{(\alpha^2-\alpha)^2}x^2 + 3x + 1
+$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{solution} 
+\end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Задача 4
@@ -166,12 +169,12 @@ $\alpha$, $\frac{1}{\alpha}$, $1-\alpha$, $\frac{1}{1-\alpha}$, $1-\frac{1}{\alp
 Получили разложение $x^3-x+1$ на $x-2$. Поделим его на $(x-2)^5$. \\
 Итого \\
 $
-\displaystyle\frac{x^3-x+1}{(x-2)^5} = 
+\displaystyle\frac{x^3-x+1}{(x-2)^5} =
 \frac{1}{(x-2)^2} + \frac{6}{(x-2)^3} + \frac{11}{(x-2)^4} + \frac{7}{(x-2)^5} \\
 $
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{solution} 
+\end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Задача 5
@@ -184,12 +187,31 @@ $\frac{x^2}{x^4-16}$
 %% Ваше решение задачи здесь
 
 $
-\frac{x^2}{x^4-16} = \frac{x^2}{(x^2+4)(x - 2)(x + 2)} = 
-\frac{ax + b}{x^2+4} + \frac{c}{x - 2} + \frac{d}{x + 2} = 
+\frac{x^2}{x^4-16} = \frac{x^2}{(x^2+4)(x - 2)(x + 2)} =
+\frac{ax + b}{x^2+4} + \frac{c}{x - 2} + \frac{d}{x + 2} =
+\frac{(a+c+d)x^3 + (b+2c-2d)x^2 + (-4a+4c+4d)x + (-4b+8c-8d)}{x^4-16} \\
+\left\{
+  \begin{array}{rrrr}
+    a + c + d = 0 \\
+    b + 2c -2d = 1 \\
+    -a + c + d = 0 \\
+    -b + 2c - 2d = 0
+  \end{array}
+\right.
+\left\{
+  \begin{array}{rrrr}
+    a = 0 \\
+    b = \frac{1}{2} \\
+    c = \frac{1}{8} \\
+    d = -\frac{1}{8}
+  \end{array}
+\right. \\
+\frac{x^2}{x^4-16} =
+\frac{\frac{1}{2}}{x^2+4} + \frac{\frac{1}{8}}{x - 2} + \frac{-\frac{1}{8}}{x + 2}
 $
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{solution} 
+\end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Задача 6
@@ -201,10 +223,44 @@ $\frac{2x-1}{x(x+1)^2(x^2+x+1)^2}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ваше решение задачи здесь
 
-
+$\displaystyle \frac{2x-1}{x(x+1)^2(x^2+x+1)^2} = \frac{a}{x} + \frac{b}{x + 1} + \frac{c}{(x + 1)^2} + \frac{dx + e}{x^2 + x + 1} + \frac{fx + g}{(x^2 + x + 1)^2}$
+\\
+$\displaystyle 2x-1 = a(x+1)^2(x^2+x+1)^2 + bx(x+1)(x^2+x+1)^2 + cx(x^2+x+1)^2 + (dx+e)x(x+1)^2(x^2+x+1)+(fx+g)x(x+1)^2$
+\\
+$\displaystyle 2x-1 = x^6(a+b+d)+x^5(4a+3b+c+3d+e)+x^4(8a+5b+2c+4d+f)+x^3(10a+5b+3c+3d+4e+2f+g)+x^2(8a+3b+2c+d+3e+f+2g)+x(4a+b+c+e+g)+a$
+\\
+$
+\left\{
+\begin{aligned}
+    a + b + d &= 0,\\
+    4a + 3b + c + 3d + e &= 0,\\
+    8a + 5b + 2c + 4d + f &= 0,\\
+    10a + 5b + 3c + 3d + 4e + 2f + g &= 0,\\
+    8a + 3b + 2c + d + 3e + f + 2g &= 0,\\
+    4a + b + c + e + g &= 2,\\
+    a &= -1
+\end{aligned}
+\right.
+$
+\\
+$
+\left\{
+\begin{aligned}
+    a &= -1,\\
+    b &= 7,\\
+    c &= 3,\\
+    d &= -6,\\
+    e &= -2,\\
+    f &= -3,\\
+    g &= -2
+\end{aligned}
+\right.
+$
+\\
+$\displaystyle \frac{2x-1}{x(x+1)^2(x^2+x+1)^2} = -\frac{1}{x} + \frac{7}{x + 1} + \frac{3}{(x+1)^2} - \frac{6x + 2}{x^2 + x + 1} - \frac{3x + 2}{(x^2 + x + 1)^2}$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{solution} 
+\end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Задача 7
@@ -215,10 +271,26 @@ $\frac{2x-1}{x(x+1)^2(x^2+x+1)^2}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ваше решение задачи здесь
 
-
+$\displaystyle \frac{x^2}{x^4-1} = \frac{a}{x - 1} + \frac{b}{x + 1} + \frac{c}{x - i} + \frac{d}{x + i}$
+\\
+$\displaystyle x^4-1 = (x^2 - 1)(x^2 + 1) = (x - 1)(x + 1)(x - i)(x + i)$
+\\
+$\displaystyle x^2 = a(x - i)(x + i)(x + 1) + b(x - i)(x + i)(x - 1) + c(x - 1)(x + 1)(x + i) + d(x - 1)(x + 1)(x - i)$
+\\
+$\displaystyle\text{при x = 1: $4a = 1\rightarrow a = \frac{1}{4}$}$
+\\
+$\displaystyle\text{при x = -1: $-4b = 1\rightarrow b = -\frac{1}{4}$}$
+\\
+$\displaystyle\text{при x = i: $-4ic = -1\rightarrow c = -\frac{i}{4}$}$
+\\
+$\displaystyle\text{при x = -i: $4id = -1\rightarrow d = \frac{i}{4}$}$
+\\
+$\displaystyle \frac{x^2}{x^4-1} = \frac{1}{4(x - 1)} - \frac{1}{4(x + 1)} - \frac{i}{4(x - i)} + \frac{i}{4(x + i)}$
+\\
+Ответ: $\displaystyle \frac{1}{4(x - 1)} - \frac{1}{4(x + 1)} - \frac{i}{4(x - i)} + \frac{i}{4(x + i)}$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{solution} 
+\end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Задача 8
@@ -229,10 +301,48 @@ $\frac{2x-1}{x(x+1)^2(x^2+x+1)^2}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ваше решение задачи здесь
 
-
+$\displaystyle \frac{5x^2+6x-23}{(x-1)^3(x+1)^2(x-2)} = \frac{a}{x-1} + \frac{b}{(x-1)^2} + \frac{c}{(x-1)^3}+\frac{d}{x+1} + \frac{e}{(x+1)^2} + \frac{f}{x-2}$
+\\
+$\displaystyle 5x^2+6x-23 = a(x-1)^2(x+1)^2(x-2) + b(x-1)(x+1)^2(x-2) + c(x+1)^2(x-2) + d(x-1)^3(x+1)(x-2) + e(x-1)^3(x-2) + f(x-1)^3(x+1)^2$
+\\
+$\displaystyle \text{при x = 1: } -4c=-12 \rightarrow c = 3$
+\\
+$\displaystyle \text{при x = -1: } 24e=-24 \rightarrow e = -1$
+\\
+$\displaystyle \text{при x = 2: } 9f=9 \rightarrow f = 1$
+\\
+$
+\left\{
+\begin{aligned}
+    a + d &= -1,\\
+    2a - b + 4d &= -2,\\
+    2a + b - 4d &= 6,\\
+    4a - 3b + 2d &= 12,\\
+    a + b - 5d &= 7,\\
+    2a - 2b - 2d &= 14
+\end{aligned}
+\right.
+$
+\\
+$
+\left\{
+\begin{aligned}
+    b &= 2a + 4d + 2,\\
+    2a + b - 4d &= 6
+\end{aligned}
+\right.
+$
+\\
+$\displaystyle 2a + 2a + 4d + 2 - 4d = 6 \rightarrow 4a = 4 \rightarrow a = 1$
+\\
+$\displaystyle d = -2$
+\\
+$\displaystyle b = 2 - 8 + 2 = -4$
+\\
+$\displaystyle \frac{5x^2+6x-23}{(x-1)^3(x+1)^2(x-2)} = \frac{1}{x - 1} - \frac{4}{(x-1)^2} + \frac{3}{(x-1)^3} - \frac{2}{x+1} - \frac{1}{(x+2)^2} + \frac{1}{x-2}$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{solution} 
+\end{solution}
 
 
 %------------------------------------------------
