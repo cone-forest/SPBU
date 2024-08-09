@@ -1,0 +1,9 @@
+digraph Fifth {
+  g -> f;
+  g -> e;
+  g -> a;
+  f -> e;
+  e -> a;
+  e -> d;
+  c -> b;
+}

@@ -1,0 +1,65 @@
+
+\documentclass[a4paper, 12pt]{article}
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0in}
+
+\usepackage[T2A]{fontenc}% Внутренняя T2A кодировка TeX
+\usepackage[utf8]{inputenc}% кодировка файла
+\usepackage[russian]{babel}% поддержка переносов в русском языке
+\usepackage{amsthm, amsmath, amssymb} % Mathematical typesetting
+\usepackage{float} % Improved interface for floating objects
+\usepackage{graphicx, multicol} % Enhanced support for graphics
+\usepackage{xcolor} % Driver-independent color extensions
+\usepackage{mdframed}
+\usepackage{polynom}
+
+\usepackage[yyyymmdd]{datetime} % Uses YEAR-MONTH-DAY format for dates
+\renewcommand{\dateseparator}{.} % Sets dateseparator to '.'
+
+\usepackage{fancyhdr} % Headers and footers
+
+\begin{document}
+
+6.1
+Линии пересекаются в точке: $P({u}=1,{v}=2)$ \\
+$\vec{r_{u}}=\{\cos{v},\sin{v},2{u}\}$ \\
+$\vec{r_{v}}=\{-{u}\sin{v},{u}\cos{v},0\}$ \\
+$E=\vec{r_{u}}^2=\cos{v}^2+\sin{v}^2+4{u}^2=1+4{u}^2$ \\
+$F=\vec{r_{u}}\vec{r_{v}}=-{u}\sin{v}\cos{v}+{u}\sin{v}\cos{v}=0$ \\
+$G=\vec{r_{v}}^2={u}^2\sin{v}^2+{u}^2\cos{v}^2={u}^2$ \\
+$d{v}=d{u}$ \\
+$\delta{v}=-\delta{u}$ \\
+$\cos{\theta}=\frac{(1+4{u}^2)d{u}\delta{u}+{u}^2d{v}\delta{v}}{\sqrt{(1+4{u}^2)d{u}^2+{u}^2d{v}^2}\sqrt{(1+4{u}^2)\delta{u}^2+{u}^2\delta{v}^2}}=\frac{d{u}\delta{u}+4{u}^2d{u}\delta{u}-{u}^2d{u}\delta{u}}{\sqrt{d{u}^2+4{u}^2d{u}^2+{u}^2d{u}^2}\sqrt{\delta{u}^2+4{u}^2\delta{u}^2+{u}^2\delta{u}^2}}=\frac{d{u}\delta{u}(3{u}^2+1)}{\sqrt{(1+5{u}^2)d{u}^2}\sqrt{(1+5{u}^2)\delta{u}^2}}=\frac{1+3u^2}{1+5{u}^2}=({u=1})=\frac{2}{3}$ \\
+Ответ: \\
+$\arccos{\frac{2}{3}}$ \\
+6.2 \\
+$I=d{u}^2+d{v}^2$ \\
+$E=1$ \\
+$F=0$ \\
+$G=1$ \\
+$\left\{ \\
+\begin{aligned} \\
+d{v}=-\frac{\alpha}{\beta}d{u}\\ \\
+\delta{v}=-\frac{\gamma}{\tau}d{v} \\
+\end{aligned} \\
+\right.$ \\
+$\cos{\theta}=\frac{d{u}\delta{u}+d{v}\delta{v}}{\sqrt{d{u}^2+d{v}^2}\sqrt{\delta{u}^2+\delta{v}^2}}=\frac{d{u}\delta{u}+\frac{\alpha}{\beta}d{u}\frac{\gamma}{\tau}\delta{u}}{\sqrt{d{u}^2+\frac{\alpha^2}{\beta^2}d{u}^2}\sqrt{\delta{u}^2+\frac{\gamma^2}{\tau^2}\delta{u}^2}}=\frac{(1+\frac{\alpha\gamma}{\beta\tau})d{u}\delta{u}}{\sqrt{\frac{\beta^2+\alpha^2}{\beta^2}}\sqrt{\frac{\tau^2+\gamma^2}{\tau^2}}d{u}\delta{u}}=\frac{\beta\tau+\alpha\gamma}{\beta\tau\sqrt{\frac{\beta^2+\alpha^2}{\beta^2}}\sqrt{\frac{\tau^2+\gamma^2}{\tau^2}}}=\frac{\beta\tau+\alpha\gamma}{\sqrt{\beta^2+\alpha^2}\sqrt{\tau^2+\gamma^2}}=\frac{(\beta\tau+\alpha\gamma)\sqrt{(\beta^2+\alpha^2)(\tau^2+\gamma^2)}}{(\beta^2+\alpha^2)(\tau^2+\gamma^2)}$ \\
+Ответ: \\
+$\arccos{\frac{(\beta\tau+\alpha\gamma)\sqrt{(\beta^2+\alpha^2)(\tau^2+\gamma^2)}}{(\beta^2+\alpha^2)(\tau^2+\gamma^2)}}$ \\
+6.3 \\
+$I=2d{u}^2-d{u}d{v}+4d{v}^2$ \\
+$E=2$ \\
+$F=-\frac{1}{2}$ \\
+$G=4$ \\
+$\left\{ \\
+\begin{aligned} \\
+d{v}=2d{u}\\ \\
+\delta{v}=-2\delta{u} \\
+\end{aligned} \\
+\right.$ \\
+$\cos{\theta}=\frac{2d{u}\delta{u}-\frac{1}{2}(d{u}\delta{v}+d{v}\delta{u})+4d{v}\delta{v}}{\sqrt{2d{u}^2-d{u}d{v}+4d{v}^2}\sqrt{2\delta{u}^2-\delta{u}\delta{v}+4\delta{v}^2}}=\frac{2d{u}\delta{u}-\frac{1}{2}(-2d{u}\delta{u}+2d{u}\delta{u})-16d{u}\delta{u}}{\sqrt{2d{u}^2-2d{u}^2+16d{u}^2}\sqrt{2\delta{u}^2+2\delta{u}^2+16\delta{u}^2}}=\frac{-14d{u}\delta{u}}{4d{u}2\sqrt{5}\delta{u}}=-\frac{7}{4\sqrt{5}}=-\frac{7\sqrt{5}}{20}$ \\
+Ответ: \\
+$\arccos{-\frac{7\sqrt{5}}{20}}$
+
+\end{document}

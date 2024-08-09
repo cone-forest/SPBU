@@ -1,0 +1,1112 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0in}
+
+\usepackage[T2A]{fontenc}% Внутренняя T2A кодировка TeX
+\usepackage[utf8]{inputenc}% кодировка файла
+\usepackage[russian]{babel}% поддержка переносов в русском языке
+\usepackage{amsthm, amsmath, amssymb} % Mathematical typesetting
+\usepackage{float} % Improved interface for floating objects
+\usepackage{graphicx, multicol} % Enhanced support for graphics
+\usepackage{xcolor} % Driver-independent color extensions
+\usepackage{mdframed}
+\usepackage{polynom}
+\usepackage{tikz}
+
+\usepackage[yyyymmdd]{datetime} % Uses YEAR-MONTH-DAY format for dates
+\renewcommand{\dateseparator}{.} % Sets dateseparator to '.'
+
+\usepackage{fancyhdr} % Headers and footers
+
+\begin{document}
+
+$
+\text{Квадратичная форма:} \\
+\left(
+  \begin{array}{ccc}
+    14 & 6 & 2 \\
+    6 & 5 & -4 \\
+    2 & -4 & -7
+  \end{array}
+\right) \\
+a_{12} \neq 0 \rightarrow \text{Есть поворот} \\
+ctg(2\phi) = \frac{a_{11} - a_{22}}{2a_{12}} = \frac{9}{12} = \frac{3}{4} \rightarrow \sin\phi = \frac{4}{5}, \cos\phi = \frac{3}{5} \\
+(x', y') = (x, y) \cdot
+\left(
+  \begin{array}{rr}
+    \frac{3}{5} & -\frac{4}{5} \\
+    \frac{4}{5} & \frac{3}{5}
+  \end{array}
+\right) = (\frac{3}{5}x + \frac{4}{5}y, \frac{3}{5}y - \frac{4}{5}x)
+$
+$
+\\
+14(\frac{3}{5}x + \frac{4}{5}y)^2 + 12(\frac{3}{5}x + \frac{4}{5}y)(\frac{3}{5}y - \frac{4}{5}x) + 5(\frac{3}{5}y - \frac{4}{5}x)^2 + 4(\frac{3}{5}x + \frac{4}{5}y) - 8(\frac{3}{5}y - \frac{4}{5}x) - 7 = 0
+\\
+\\
+\\
+\\
+\\
+\\
+\text{Фокусы:}\ F_1(3, -4); F_2(-1, 4) \rightarrow
+\text{Центр}\ O: \frac{\{3, -4\} + \{-1, 4\}}{2} = \{1, 0\} \\
+\vec{F_{12}} = (F_2 - F_1) = \{-4, 8\} \rightarrow
+\text{Угол поворота:}\ -\arctan(2) \\
+|F_{12}| = 4\sqrt5 \rightarrow
+\text{scale-factor} = 4\sqrt5 / 4 = \sqrt5 \\
+\text{Итого}: \\
+\left(
+  \begin{array}{cc}
+    x' & y'
+  \end{array}
+\right) =
+(\left(
+  \begin{array}{cc}
+    x & y
+  \end{array}
+\right) -
+\left(
+  \begin{array}{rr}
+    1 & 0
+  \end{array}
+\right)) \cdot
+\left(
+  \begin{array}{rrr}
+    \frac{\sqrt5}{5} & \frac{2\sqrt5}{5} \\
+    -\frac{2\sqrt5}{5} & \frac{\sqrt5}{5} \\
+  \end{array}
+\right) \cdot
+\left(
+  \begin{array}{rrr}
+    \frac{1}{\sqrt5} & 0 \\
+    0       & \frac{1}{\sqrt5}
+  \end{array}
+\right) = \\
+(\frac{x-1}{5} - \frac{2y}{5}, \frac{y}{5} + \frac{2(x-1)}{5}) \rightarrow \\
+\text{Уравнение гиперболы}: \\
+(\frac{x-1}{5} - \frac{2y}{5})^2 - (\frac{y}{5} + \frac{2(x-1)}{5})^2 = 1
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\text{Найти базис суммы и пересечения пространств} \\
+L_1 :
+\begin{cases}
+  x_1 +x_2 -x_3 +x_4 -x_5 =0 \\
+  2 x_1 +3 x_2 -3 x_3 +3 x_4 -2 x_5 =0
+\end{cases} \\
+L_2 : b_1 =\{ -1,4,2,-1,-1\}, b_2 =\{ 4,1,2,2,4\}, b_3 =\{ -6,2,-1,-4,-6\}. \\
+L_1:
+\left(
+  \begin{array}{ccccccc}
+    1 & 1 & -1 & 1 & -1 & 0 \\
+    2 & 3 & -3 & 3 & -2 & 0 \\
+  \end{array}
+\right) \rightarrow
+\left(
+  \begin{array}{ccccccc}
+    1 & 1 & -1 & 1 & -1 & 0 \\
+    0 & 1 & -1 & 1 & 0 & 0 \\
+  \end{array}
+\right) \rightarrow
+\left(
+  \begin{array}{ccccccc}
+    1 & 0 & 0 & 0 & -1 & 0 \\
+    0 & 1 & -1 & 1 & 0 & 0 \\
+  \end{array}
+\right) \\
+\left(
+  \begin{array}{r}
+    x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5
+  \end{array}
+\right) = \left(
+  \begin{array}{r}
+    1 \\ 0 \\ 0 \\ 0 \\ 1
+  \end{array}
+\right) x_5 +
+\left(
+  \begin{array}{r}
+    0 \\ -1 \\ 0 \\ 1 \\ 0
+  \end{array}
+\right) x_4 +
+\left(
+  \begin{array}{r}
+    0 \\ 1 \\ 1 \\ 0 \\ 0
+  \end{array}
+\right) x_3 \rightarrow \\
+a_1 = \{ 1, 0, 0, 0, 1 \};
+a_2 = \{ 0, -1, 0, 1, 0 \};
+a_3 = \{ 0, 1, 1, 0, 0 \};
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+x^2 + 2y^2 + 4z^2 = 1 \\
+x^2 + \frac{y^2}{\frac{\sqrt2}{2}^2} + \frac{z^2}{\frac{1}{2}^2} = 1 \\
+\begin{cases}
+  x = \cos u \sin v \\
+  y = \frac{\sqrt2}{2}\sin u \sin v \\
+  z = \frac{1}{2} \cos v
+\end{cases} \\
+\vec{r'}_u: \\
+  \begin{cases}
+    x = -\sin u \sin v \\
+    y = \frac{\sqrt2}{2}\cos u \sin v \\
+    z = 0
+  \end{cases} \\
+\vec{r'}_v: \\
+  \begin{cases}
+    x = \cos u \cos v \\
+    y = \frac{\sqrt2}{2}\sin u \cos v \\
+    z = -\frac{1}{2} \sin v
+  \end{cases} \\
+\vec{n}(u, v) = \vec{r'}_u \times \vec{r'}_v =
+\left|
+  \begin{array}{rrr}
+    i & j & k \\
+    -\sin u \sin v & \frac{\sqrt2}{2}\cos u \sin v & 0 \\
+    \cos u \cos v & \frac{\sqrt2}{2}\sin u \cos v & -\frac{1}{2} \sin v \\
+  \end{array}
+  \right| = \\
+  \begin{cases}
+    x = \frac{\sqrt2}{4}\cos u \sin^2 v \\
+    y = \frac{1}{2}\sin u \sin^2 v \\
+    z = \frac{\sqrt2}{2}\sin v \cos v \\
+  \end{cases} \\
+\vec{r'}_{uu}: \\
+  \begin{cases}
+    x = -\cos u \sin v \\
+    y = -\frac{\sqrt2}{2}\sin u \sin v \\
+    z = 0
+  \end{cases} \\
+\vec{r'}_{uv}: \\
+  \begin{cases}
+    x = -\sin u \cos v \\
+    y = \frac{\sqrt2}{2}\cos u \cos v \\
+    z = 0
+  \end{cases} \\
+\vec{r'}_{vv}: \\
+  \begin{cases}
+    x = -\cos u \sin v \\
+    y = \frac{\sqrt2}{2}\sin u \sin v \\
+    z = -\frac{1}{2} \cos v
+  \end{cases} \\
+L = \frac{
+    -\cos u \sin v \frac{\sqrt2}{4} \cos u \sin^2 v +
+    -\frac{\sqrt2}{2}\sin u \sin v \frac{1}{2} \sin u \sin^2 v
+  }{
+    \sqrt{
+      (\frac{\sqrt2}{4}\cos u \sin^2 v)^2 +
+      (\frac{1}{2}\sin u \sin^2 v)^2 +
+      (\frac{\sqrt2}{2}\sin v \cos v)^2
+    }
+  } \\
+M = \frac{
+    -\sin u \cos v \frac{\sqrt2}{4}\cos u \sin^2 v +
+    \frac{\sqrt2}{2}\cos u \cos v \frac{1}{2} \sin u \sin^2 v
+  }{
+    \sqrt{
+      (\frac{\sqrt2}{4}\cos u \sin^2 v)^2 +
+      (\frac{1}{2}\sin u \sin^2 v)^2 +
+      (\frac{\sqrt2}{2}\sin v \cos v)^2
+    }
+  } \\
+N = \frac{
+    -\cos u \sin v \frac{\sqrt2}{4}\cos u \sin^2 v +
+    \frac{\sqrt2}{2}\sin u \sin v \frac{1}{2}\sin u \sin^2 v +
+    -\frac{1}{2} \cos v \frac{\sqrt2}{2}\sin v \cos v
+  }{
+    \sqrt{
+      (\frac{\sqrt2}{4}\cos u \sin^2 v)^2 +
+      (\frac{1}{2}\sin u \sin^2 v)^2 +
+      (\frac{\sqrt2}{2}\sin v \cos v)^2
+    }
+  } \\
+\text{Значит вторая квадратичная форма:} \\
+\frac{
+    -\cos u \sin v \frac{\sqrt2}{4} \cos u \sin^2 v +
+    -\frac{\sqrt2}{2}\sin u \sin v \frac{1}{2} \sin u \sin^2 v
+  }{
+    \sqrt{
+      (\frac{\sqrt2}{4}\cos u \sin^2 v)^2 +
+      (\frac{1}{2}\sin u \sin^2 v)^2 +
+      (\frac{\sqrt2}{2}\sin v \cos v)^2
+    }
+  } du^2 +
+2\frac{
+    -\sin u \cos v \frac{\sqrt2}{4}\cos u \sin^2 v +
+    \frac{\sqrt2}{2}\cos u \cos v \frac{1}{2} \sin u \sin^2 v
+  }{
+    \sqrt{
+      (\frac{\sqrt2}{4}\cos u \sin^2 v)^2 +
+      (\frac{1}{2}\sin u \sin^2 v)^2 +
+      (\frac{\sqrt2}{2}\sin v \cos v)^2
+    }
+  } du dv +
+\frac{
+    -\cos u \sin v \frac{\sqrt2}{4}\cos u \sin^2 v +
+    \frac{\sqrt2}{2}\sin u \sin v \frac{1}{2}\sin u \sin^2 v +
+    -\frac{1}{2} \cos v \frac{\sqrt2}{2}\sin v \cos v
+  }{
+    \sqrt{
+      (\frac{\sqrt2}{4}\cos u \sin^2 v)^2 +
+      (\frac{1}{2}\sin u \sin^2 v)^2 +
+      (\frac{\sqrt2}{2}\sin v \cos v)^2
+    }
+  } dv^2
+\\
+\\
+\\
+\\
+\\
+\text{Определить тип поверхности второго порядка и написать её каноническое уравнение} \\
+x^2 + y^2 + z^2 - 2xy - 2xz + 2yz + 2x - 4y - 2z + 1 = 0 \\
+\text{Матрица квадратичной формы:} \\
+\left(
+  \begin{array}{rrrr}
+     1 & -1 & -1 &  1 \\
+    -1 &  1 &  1 & -2 \\
+    -1 &  1 &  1 & -1 \\
+     1 & -2 & -1 &  1
+  \end{array}
+\right) \\
+\text{Инварианты:}\\
+I_1 = 1 + 1 + 1 = 3 \\
+I_2 = 0 + 0 + 0 = 0 \\
+I_3 = \left|
+  \begin{array}{rrr}
+     1 & -1 & -1 \\
+    -1 &  1 &  1 \\
+    -1 &  1 &  1 \\
+  \end{array}
+\right| = 0 \\
+I_4 = \left|
+  \begin{array}{rrrr}
+     1 & -1 & -1 &  1 \\
+    -1 &  1 &  1 & -2 \\
+    -1 &  1 &  1 & -1 \\
+     1 & -2 & -1 &  1
+  \end{array}
+\right| = 0 \\
+I(\lambda) =
+\left|
+  \begin{array}{rrr}
+     1-\lambda & -1 & -1 \\
+    -1 &  1-\lambda &  1 \\
+    -1 &  1 &  1-\lambda \\
+  \end{array}
+\right| = (\lambda + 7)(\lambda - 4)^2 \\
+\lambda \in \{0, 0, 3\} \\
+\widetilde{I_3} = -1 + 0 + 0 = -1 \\
+I_3 = 0 \land I_2 = 0 \land I_4 = 0 \land \widetilde{I_3} \neq 0 \rightarrow \\
+3x'^2 + 2\sqrt{-\frac{-1}{3}}y' = 0 \\
+3x'^2 + \frac{2\sqrt3}{3}y' = 0 \\
+x'' = -y'; y'' = x' \\
+3y''^2 - \frac{2\sqrt3}{3}x'' = 0 \\
+3y''^2 = \frac{2\sqrt3}{3}x'' \\
+y''^2 = \frac{2\sqrt3}{9}x'' \\
+\text{Это каноническое уравнение параболического цилиндра} \\
+\\
+\\
+\\
+\\
+\\
+\\
+3x^2 - 5y^2 + 3z^2 + 6xy - 2xz + 6yz - 14x + 10y + 2z + 31 = 0 \\
+\text{Матрица квадратичной формы:} \\
+\left(
+  \begin{array}{rrrr}
+    3 & 3 & -1 & -7 \\
+    3 & -5 & 3 & 5 \\
+    -1 & 3 & 3 & 1 \\
+    -7 & 5 & 1 & 31
+  \end{array}
+\right) \\
+\text{Инварианты:}\\
+I_1 = 3 + -5 + 3 = 1 \\
+I_2 = 8 + -24 + -24 = -40 \\
+I_3 = \left|
+  \begin{array}{rrr}
+    3 & 3 & -1 \\
+    3 & -5 & 3 \\
+    -1 & 3 & 3 \\
+  \end{array}
+\right| = -112 \\
+I_4 = \left|
+  \begin{array}{rrrr}
+    3 & 3 & -1 & -7 \\
+    3 & -5 & 3 & 5 \\
+    -1 & 3 & 3 & 1 \\
+    -7 & 5 & 1 & 31
+  \end{array}
+\right| = -3136 \\
+I(\lambda) =
+\left|
+  \begin{array}{rrr}
+    3-\lambda & 3 & -1 \\
+    3 & -5-\lambda & 3 \\
+    -1 & 3 & 3-\lambda \\
+  \end{array}
+\right| = (\lambda + 7)(\lambda - 4)^2 \\
+\lambda \in \{-7, 4, 4\} \\
+I_3 \neq 0 \rightarrow \\
+-7x'^2 + 4y'^2 + 4z'^2 + \frac{-3136}{-112} = 0 \\
+-7x'^2 + 4y'^2 + 4z'^2 + 28 = 0 \\
+\text{Это уравнение двуполостного гиперболоида} \\
+-7x'^2 + 4y'^2 + 4z'^2 = -28 \\
+-\frac{1}{4}x'^2 + \frac{1}{7}y'^2 + \frac{1}{7}z'^2 = -1 \\
+-\frac{x'^2}{2^2} + \frac{y'^2}{\sqrt7^2} + \frac{z'^2}{\sqrt7^2} = -1 \\
+x'' = z'; y'' = y''; z'' = x'; \\
+-\frac{z''^2}{2^2} + \frac{y''^2}{\sqrt7^2} + \frac{x''^2}{\sqrt7^2} = -1 \\
+\frac{x''^2}{\sqrt7^2} + \frac{y''^2}{\sqrt7^2} - \frac{z''^2}{2^2}  = -1 \\
+\text{Его каноническое уравнение}
+\\
+\\
+\\
+\\
+\\
+\text{Определить тип поверхности второго порядка и написать её каноническое уравнение:} \\
+2x + 5z - 4xy - 4yz = 0 \\
+\text{Матрица квадратичной формы:} \\
+\left(
+  \begin{array}{rrrr}
+    0 & -2 & 0 & 1 \\
+    -2 & 0 & -2 & 0 \\
+    0 & -2 & 0 & 2.5 \\
+    1 & 0 & 2.5 & 0
+  \end{array}
+\right) \\
+\text{Инварианты:}\\
+I_1 = 0 + 0 + 0 = 0 \\
+I_2 = 0 + -4 + -4 = -8 \\
+I_3 = \left|
+  \begin{array}{rrr}
+    0 &  -2 & 0 \\
+    -2 & 0 & -2 \\
+    0 &  -2 & 0 \\
+  \end{array}
+\right| = 0 \\
+I_4 = \left|
+  \begin{array}{rrrr}
+    0 & -2 & 0 & 1 \\
+    -2 & 0 & -2 & 0 \\
+    0 & -2 & 0 & 2.5 \\
+    1 & 0 & 2.5 & 0
+  \end{array}
+\right| = 9 \\
+I(\lambda) =
+\left|
+  \begin{array}{rrr}
+    0-\lambda &  -2 & 0 \\
+    -2 & 0-\lambda & -2 \\
+    0 &  -2 & 0-\lambda \\
+  \end{array}
+\right| = \lambda(\lambda^2 - 8)\\
+\lambda \in \{0, -2\sqrt2, 2\sqrt2\} \\
+I_3 = 0 \land I_2 \neq 0 \land I_3 \neq 0 \rightarrow \\
+-2\sqrt2x'^2 + 2\sqrt2y'^2 + 2\sqrt{-\frac{9}{-8}}z' = 0 \\
+-2\sqrt2x'^2 + 2\sqrt2y'^2 + \frac{3\sqrt2}{2}z' = 0 \\
+\text{Это уравнение гиперболического параболоида} \\
+-2x'^2 + 2y'^2 + \frac{3}{2}z' = 0 \\
+4x'^2 - 4y'^2 = 3z' \\
+\frac{4}{3}x'^2 - \frac{4}{3}y'^2 = z' \\
+\frac{x'^2}{(\frac{\sqrt3}{2})^2} - \frac{y'^2}{(\frac{\sqrt3}{2})^2} = z' \\
+\text{Это его каноническое уравнение}
+\\
+\\
+\\
+\\
+\\
+3x^2 - 3y^2 + 4xz + 4yz - 9x + 9y - 11z = k \\
+\text{Матрица квадратичной формы:} \\
+\left(
+  \begin{array}{rrrr}
+    3 & 0 & 2 & -4.5 \\
+    0 & -3 & 2 & 4.5 \\
+    2 & 2 & 0 & -5.5 \\
+    -4.5 & 4.5 & -5.5 & -k
+  \end{array}
+\right) \\
+\text{Инварианты:}\\
+I_1 = 3 - 3 + 0 = 0 \\
+I_2 = -4 + -4 + -9 = -17 \\
+I_3 = \left|
+  \begin{array}{rrr}
+    3 &  0 & 2 \\
+    0 & -3 & 2 \\
+    2 &  2 & 0 \\
+  \end{array}
+\right| = 0 \\
+I_4 = \left|
+  \begin{array}{rrrr}
+    3 & 0 & 2 & -4.5 \\
+    0 & -3 & 2 & 4.5 \\
+    2 & 2 & 0 & -5.5 \\
+    -4.5 & 4.5 & -5.5 & -k
+  \end{array}
+\right| = \frac{9}{4} \\
+I(\lambda) =
+\left|
+  \begin{array}{rrr}
+    3-\lambda &  0 & 2 \\
+    0 & -3-\lambda & 2 \\
+    2 &  2 & -\lambda \\
+  \end{array}
+\right| = \lambda(\lambda^2 - 17) \rightarrow \\
+\lambda \in \{0, -\sqrt{17}, \sqrt{17}\} \\
+I_3 = 0 \land I_2 \neq 0 \land I_3 \neq 0 \rightarrow \\
+-\sqrt{17}x'^2 + \sqrt{17}y'^2 + 2\sqrt{-\frac{\frac{9}{4}}{-17}}z' = 0 \\
+-\sqrt{17}x'^2 + \sqrt{17}y'^2 + 3\sqrt{\frac{1}{17}}z' = 0 \\
+\text{Это уравнение гиперболического параболоида, не зависящее от k} \\
+\text{Значит поверхность всегда гиперболический параболоид}
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+8x^2 + 5y^2 + z^2 - 12xy + 4xz - 4yz - x + 4y - 6z = k \\
+\text{Матрица квадратичной формы:} \\
+\left(
+  \begin{array}{rrrr}
+     8 & -6 &  2 & -\frac{1}{2} \\
+    -6 &  5 & -2 & 2 \\
+     2 & -2 &  1 & -3 \\
+    -\frac{1}{2} & 2 & -3 & -k
+  \end{array}
+\right) \\
+\text{Инварианты:}\\
+I_1 = 8 + 5 + 0 = 13 \\
+I_2 = 4 + 1 + 4 = 9 \\
+I_3 = \left|
+  \begin{array}{rrr}
+    8 & -6 &  2 \\
+    -6 &  5 & -2 \\
+    2 & -2 &  1 \\
+  \end{array}
+\right| = 0 \\
+I_4 = \left|
+  \begin{array}{rrrr}
+     8 & -6 &  2 & -\frac{1}{2} \\
+    -6 &  5 & -2 & 2 \\
+     2 & -2 &  1 & -3 \\
+    -\frac{1}{2} & 2 & -3 & -k
+  \end{array}
+\right| = -\frac{25}{4} \\
+I(\lambda) =
+\left|
+  \begin{array}{rrr}
+    8-\lambda & -6 &  2 \\
+    -6 &  5-\lambda & -2 \\
+    2 & -2 &  1-\lambda \\
+  \end{array}
+\right| = \lambda(\lambda - 7 - 2\sqrt{10})(\lambda - 7 + 2\sqrt{10}) \rightarrow \\
+\lambda \in \{0, 7 - 2\sqrt{10}, 7 + 2\sqrt{10}\} \\
+I_3 = 0 \land I_2 \neq 0 \land I_3 \neq 0 \rightarrow \\
+(7-2\sqrt{10})x'^2 + (7+2\sqrt{10})y'^2 + 2\sqrt{-\frac{-\frac{25}{4}}{9}}z' = 0 \\
+(7-2\sqrt{10})x'^2 + (7+2\sqrt{10})y'^2 + \frac{5}{3}z' = 0 \\
+\text{Это уравнение гиперболического параболоида, не зависящее от k} \\
+\text{Значит поверхность всегда гиперболический параболоид}
+\\
+\\
+\\
+\\
+\\
+\\
+\text{Матрица квадратичной формы:} \\
+\left(
+  \begin{array}{rrrr}
+    0 & 0 & 2 & -\frac{17}{2} \\
+    0 & 0 & 1 & -4 \\
+    2 & 1 & 1 & -3 \\
+    -\frac{17}{2} & -4 & -3 & -k
+  \end{array}
+\right) \\
+\text{Инварианты:}\\
+I_1 = 0 + 0 + 1 = 1 \\
+I_2 = 0 + -1 + -4 = -5 \\
+I_3 = \left|
+  \begin{array}{rrr}
+    0 & 0 & 2 \\
+    0 & 0 & 1 \\
+    2 & 1 & 1 \\
+  \end{array}
+\right| = 0 \\
+I_4 = \left|
+  \begin{array}{rrrr}
+    0 & 0 & 2 & -\frac{17}{2} \\
+    0 & 0 & 1 & -4 \\
+    2 & 1 & 1 & -3 \\
+    -\frac{17}{2} & -4 & -3 & -k
+  \end{array}
+\right| = \frac{1}{4} \\
+I(\lambda) =
+\left|
+  \begin{array}{rrr}
+    0-\lambda & 0 & 2 \\
+    0 & 0-\lambda & 1 \\
+    2 & 1 & 1-\lambda \\
+  \end{array}
+\right| = \lambda(2\lambda-1-\sqrt{21})(2\lambda-1+\sqrt{21}) \rightarrow \\
+\lambda \in \{0, \frac{1}{2}(1+\sqrt{21}), \frac{1}{2}(1-\sqrt{21})\} \\
+I_3 = 0 \land I_2 \neq 0 \land I_4 \neq 0 \rightarrow \\
+\frac{1}{2}(1-\sqrt{21})x'^2 + \frac{1}{2}(1+\sqrt{21})y'^2 + 2\sqrt{-\frac{\frac{1}{4}}{-5}}z'=0 \\
+\frac{1}{2}(1-\sqrt{21})x'^2 + \frac{1}{2}(1+\sqrt{21})y'^2 + 2\sqrt{\frac{1}{20}}z'=0 \\
+- \text{уравнение гиперболического параболоида, не зависит от k} \\
+\text{Значит поверхность всегда гиперболический параболоид}
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\text{Порядок графов в картинках: DFS, мета, инвертированный, данный} \\
+\text{Компоненты связности}: \{\{C\}, \{H\}, \{A, J, F\}, \{G, I, B\}, \{E\}, \{D\}\} \leftrightarrow \{a, b, c, d, e, f\}\ \text{(мета-граф на картинке)}\\
+\text{При добавлении ребра важно, существовал ли путь обратно и его максимальная длина (в ребрах)} \\
+\text{Если такой путь существовал, то от изначального кол-ва компонент связности вычтется длина этого пути} \\
+\text{Имеет смысл перебрать всевозможные длины таких путей и вычесть из кол-ва компонент связности.} \\
+\text{Это и будут всевозможные кол-ва компонент связности при добавлении одного ребра.} \\
+\text{Для данного графа возможные длины: от 1 до 5} \\
+\text{Значит кол-ва: от 1 до 5} \\
+\\
+\\
+\\
+\\
+\\
+\begin{array}{rrrrrrrrrrr}
+    A &      B &      C &      D &      E &      F &      G &      H &      I &      J &  \\
+    0 & \infty & \infty & \infty &      7 & \infty & \infty & \infty & \infty & \infty & \{E\} \\
+    0 & \infty & \infty & \infty &      7 & \infty &     20 &      8 & \infty & \infty & \{G;H\} \\
+    0 & \infty & \infty & \infty &      7 & \infty &     20 &      8 & \infty &     23 & \{H;J\} \\
+    0 & \infty & \infty & \infty &      7 & \infty &     20 &      8 & \infty &     14 & \{J\} \\
+    0 &     25 &     18 & \infty &      7 &     21 &     20 &      8 & \infty &     14 & \{B;C;F\} \\
+    0 &     25 &     18 & \infty &      7 &     21 &     20 &      8 &     34 &     14 & \{C;F;J\} \\
+    0 &     25 &     18 & \infty &      7 &     21 &     20 &      8 &     34 &     14 & \{F;I\} \\
+    0 &     25 &     18 &     20 &      7 &     21 &     20 &      8 &     29 &     14 & \{I;D\} \\
+    0 &     25 &     18 &     20 &      7 &     21 &     20 &      8 &     29 &     14 & \{D\} \\
+    0 &     25 &     18 &     20 &      7 &     21 &     20 &      8 &     29 &     14 & \{\} \\
+\end{array}
+\\
+\\
+\\
+\\
+\\
+\\
+\left(
+\begin{array}{rrrrrrrrrrr}
+    &      A &      B &      C &      D &      E &      F &      G &      H &      I &      J \\
+  A &      0 & \infty & \infty & \infty & \infty & \infty & \infty & \infty & \infty & \infty \\
+  B & \infty &      0 & \infty & \infty & \infty & \infty & \infty & \infty & \infty & \infty \\
+  C & \infty & \infty &      0 & \infty & \infty & \infty & \infty & \infty & \infty & \infty \\
+  D & \infty & \infty & \infty &      0 & \infty & \infty & \infty & \infty & \infty & \infty \\
+  E & \infty & \infty & \infty & \infty &      0 & \infty & \infty & \infty & \infty & \infty \\
+  F & \infty & \infty & \infty & \infty & \infty &      0 & \infty & \infty & \infty & \infty \\
+  G & \infty & \infty & \infty & \infty & \infty & \infty &      0 & \infty & \infty & \infty \\
+  H & \infty & \infty & \infty & \infty & \infty & \infty & \infty &      0 & \infty & \infty \\
+  I & \infty & \infty & \infty & \infty & \infty & \infty & \infty & \infty &      0 & \infty \\
+  J & \infty & \infty & \infty & \infty & \infty & \infty & \infty & \infty & \infty &      0
+\end{array}
+\right)
+\begin{array}{ccc}
+    & C &   \\
+  B & | & B \\
+    & | & A \\
+\end{array} \\
+\left(
+\begin{array}{rrrrrrrrrrr}
+    &      A &      B &      C &      D &      E &      F &      G &      H &      I &      J \\
+  A &      0 &      7 & \infty & \infty & \infty & \infty & \infty & \infty & \infty & \infty \\
+  B &      7 &     -4 & \infty & \infty & \infty & \infty & \infty & \infty & \infty & \infty \\
+  C & \infty & \infty &      0 & \infty & \infty & \infty & \infty & \infty & \infty & \infty \\
+  D & \infty & \infty & \infty &     -3 & \infty &      5 & \infty & \infty & \infty & \infty \\
+  E & \infty & \infty & \infty & \infty &      0 & \infty & \infty & \infty & \infty & \infty \\
+  F & \infty & \infty & \infty &      5 & \infty &      0 & \infty & \infty & \infty & \infty \\
+  G & \infty & \infty & \infty & \infty & \infty & \infty &      0 & \infty & \infty & \infty \\
+  H & \infty & \infty & \infty & \infty & \infty & \infty & \infty &      0 & \infty & \infty \\
+  I & \infty & \infty & \infty & \infty & \infty & \infty & \infty & \infty &      0 & \infty \\
+  J & \infty & \infty & \infty & \infty & \infty & \infty & \infty & \infty & \infty &      0
+\end{array}
+\right) \\
+\text{Отрицательный путь на главной диагонали, значит есть отрицательный цикл} \\
+\text{Ответ: нет решений}
+$
+$
+\\
+\\
+\\
+\\
+  |a \rightarrow a| \\
+  |b \rightarrow b| \\
+  |c \rightarrow c| \\
+  a| \rightarrow \&a \\
+  b| \rightarrow \&b \\
+  c| \rightarrow \&c \\
+  a\& \rightarrow \& \\
+  b\& \rightarrow \& \\
+  c\& \rightarrow \& \\
+  \& \rightarrowtail \\
+  a \rightarrow a| \\
+  b \rightarrow b| \\
+  c \rightarrow c| \\
+\\
+\\
+\\
+\\
+\\
+4x^2 - 4xy + y^2 - 16x - 2y + 17=0 \\
+\tan \theta = \frac{-A}{B} = \frac{-4}{-2} = 2 \rightarrow \\
+\begin{cases}
+  \cos \theta = \frac{\sqrt5}{5} \\
+  \sin \theta = \frac{2\sqrt5}{5} \\
+\end{cases} \\
+\begin{cases}
+  x = \frac{\sqrt5}{5}x' - \frac{2\sqrt5}{5}y' \\
+  y = \frac{2\sqrt5}{5}x' + \frac{\sqrt5}{5}y'
+\end{cases} \\
+(-\sqrt5y')^2 - \frac{16\sqrt5}{5}x' + \frac{32\sqrt5}{5}y' - \frac{4\sqrt5}{5}x' - \frac{2\sqrt5}{5}y' + 17 = 0 \\
+5y'^2 - 4\sqrt5x' + 6\sqrt5y' + 17 = 0 \\
+(\sqrt5y' + 3)^2 = 4(\sqrt5x' - 2) \\
+\begin{cases}
+  x'' = \sqrt5x' - 2 \\
+  y'' = \sqrt5y' + 3 \\
+\end{cases} \\
+y''^2 = 4x''^2
+\\
+\\
+\\
+\\
+\\
+\\
+\left(
+  \begin{array}{rrrr}
+    0 & -2 & 0 & 1 \\
+    -2 & 0 & -2 & 0 \\
+    0 & -2 & 0 & 2.5 \\
+    1 & 0 & 2.5 & 0
+  \end{array}
+\right) \\
+J_1 = 0 \\
+J_2 = -8 \\
+J_3 = 0 \\
+J_4 = 9 \\
+-\lambda^3 + J_1\lambda^2 - J_2\lambda + J_3 = 0 \\
+-\lambda^3 + 8\lambda = 0 \\
+-\lambda(\lambda^2 - 8) = 0 \\
+\lambda: \{0, -2\sqrt2, 2\sqrt2\} \\
+-2\sqrt2x'^2 + 2\sqrt2y'^2 + 2\sqrt{\frac{J_4}{J_2}}z^2 = 0 \\
+-2\sqrt2x'^2 + 2\sqrt2y'^2 + 2\sqrt{\frac{9}{-8}}z^2 = 0 \\
+\\
+\\
+\\
+\\
+\\
+\left(
+  \begin{array}{rrr}
+    5 & -6 & -4 \\
+    -6 & 0 & 12 \\
+    -4 & 12 & 5
+  \end{array}
+\right) \\
+S = A + C = A' + C' = 5 \\
+\gamma =
+\left|
+\begin{array}{rr}
+  5 & -6 \\
+  -6 & 0
+\end{array}
+\right| = A' C' = -36 \\
+\sigma =
+\left|
+  \begin{array}{rrr}
+    5 & -6 & -4 \\
+    -6 & 0 & 12 \\
+    -4 & 12 & 5
+  \end{array}
+\right| = A' C' F' = -324 \rightarrow \\
+A' = -4 \\
+C' = 9 \\
+F' = 9 \\
+-4x^2 + 9y^2 = -9 \\
+\frac{4}{9}x^2 - y^2 = 1 \\
+\frac{x^2}{\frac{3}{2}^2} - y^2 = 1 - \text{каноническое уравнение гиперболы} \\
+\\
+\\
+\\
+\\
+\\
+\\
+\left(
+  \begin{array}{rrr}
+    4 & -12 & 4 \\
+    -12 & 11 & 13 \\
+    4 & 13 & -41
+  \end{array}
+\right) \\
+S = A + C = A' + C' = 15 \\
+\gamma =
+\left|
+\begin{array}{rr}
+  4 & -12 \\
+  -12 & 11
+\end{array}
+\right| = A'C' = -100 \\
+\sigma =
+\left|
+  \begin{array}{rrr}
+    4 & -12 & 4 \\
+    -12 & 11 & 13 \\
+    4 & 13 & -41
+  \end{array}
+\right| = A'C'F' = 2000 \rightarrow \\
+A' = 20 \\
+C' = -5 \\
+F' = -20 \\
+20x^2 - 5y^2 = 20 \\
+x^2 - \frac{y^2}{4} = 1 - \text{каноническое уравнение гиперболы}
+\\
+\\
+\\
+\\
+\\
+\text{Асимптоты перпендикулярны}\ \rightarrow a = b \\
+\vec{a}(3, -4); \vec{b}(-1, 4); \\
+\text{Нужно, чтобы расстояние между фокусами было равно расстоянию между}\ \vec{a}\ \text{и}\ \vec{b}. \\
+\text{Для этого разобьем transform матрицу системы координат на 3 части: scale, rotate, translate:} \\
+- scale: \\
+|\vec{a}-\vec{b}| = c = \sqrt{\frac{1}{a}^2 + \frac{1}{a}^2}\ \text{a без стрелочки - коэффициент}\\
+\frac{\sqrt2}{a} = |\vec{a}-\vec{b}| \\
+\frac{1}{a} = \frac{|\vec{a}-\vec{b}|}{\sqrt2} \\
+\{x', y'\} = \{x, y\} *
+\left(
+  \begin{array}{rr}
+    \frac{1}{a} & 0 \\
+    0 & \frac{1}{a}
+  \end{array}
+\right) = \{x, y\} *
+\left(
+  \begin{array}{rr}
+    \frac{|\vec{a}-\vec{b}|}{\sqrt2} & 0 \\
+    0 & \frac{|\vec{a}-\vec{b}|}{\sqrt2}
+  \end{array}
+\right)
+\\
+- rotate: \\
+\cos \theta = \frac{(\vec{a} - \vec{b})\cdot\{1, 0, 0\}}{|\vec{a} - \vec{b}|} = \frac{\sqrt5}{5};
+\sin \theta = -\frac{2\sqrt5}{5} \\
+\{x', y'\} =
+\{x, y\} *
+\left(
+  \begin{array}{rr}
+    \frac{|\vec{a}-\vec{b}|}{\sqrt2} & 0 \\
+    0 & \frac{|\vec{a}-\vec{b}|}{\sqrt2}
+  \end{array}
+\right) *
+\left(
+  \begin{array}{rr}
+    \cos \theta & -\sin \theta \\
+    \sin \theta & \cos \theta \\
+  \end{array}
+\right) \\
+- translate:
+\vec{O} = \frac{\vec{a} + \vec{b}}{2} = \{1, 0, 0\} \\
+\{x', y'\} =
+\{x, y\} *
+\left(
+  \begin{array}{rr}
+    \frac{|\vec{a}-\vec{b}|}{\sqrt2} & 0 \\
+    0 & \frac{|\vec{a}-\vec{b}|}{\sqrt2}
+  \end{array}
+\right) *
+\left(
+  \begin{array}{rr}
+    \cos \theta & -\sin \theta \\
+    \sin \theta & \cos \theta \\
+  \end{array}
+\right) +
+\vec{O} \\
+\\
+x'^2 - y'^2 = 1 \\
+(2\sqrt{10}x)^2 - (2\sqrt{10}y)^2 = 1 \\
+(2\sqrt2x - 4\sqrt2y)^2 - (2\sqrt2x + 4\sqrt2y)^2 = 1 \\
+(2\sqrt2x - 4\sqrt2y - 1)^2 - (2\sqrt2x + 4\sqrt2y)^2 = 1 \\
+\\
+\\
+\\
+\\
+\\
+\\
+\text{Найти вторую квадратичную форму эллипсоида}\ x^2 + 2y^2 + 4z^2 = 1 \\
+x^2 + 2y^2 + 4z^2 = 1 \\
+\vec{r}(u, v) =
+\begin{cases}
+  x = \sin u \cos v \\
+  y = \frac{\sqrt2}{2}\sin u \sin v \\
+  z = \frac{1}{2}\cos u
+\end{cases} \\
+\vec{r_u}':
+\begin{cases}
+  x = \cos u \cos v \\
+  y = \frac{\sqrt2}{2}\cos u \sin v \\
+  z = -\frac{1}{2}\sin u
+\end{cases} \\
+\vec{r_v}':
+\begin{cases}
+  x = -\sin u \sin v \\
+  y = \frac{\sqrt2}{2}\sin u \cos v \\
+  z = 0
+\end{cases} \\
+\vec{n}(u, v) = \vec{r_u}(u, v) \times \vec{r_v}(u, v):
+\begin{cases}
+  \frac{1}{2}\sin u \frac{\sqrt2}{2}\sin u \cos v \\
+  \frac{1}{2}\sin u \sin u \sin v \\
+  \cos u \cos v \frac{\sqrt2}{2}\sin u \cos v - \frac{\sqrt2}{2}\cos u \sin v -\sin u \sin v
+\end{cases}
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\text{Найти угол между линиями}\ v=2u+1, v=-2u+1 \\
+\text{на поверхности с первой квадратичной формой}\ J_1=2du^2 - du dv + 4dv^2 \\
+E = 2 \\
+F = -\frac{1}{2} \\
+G = 4 \\
+dv = 2du \\
+\delta v = -2\delta u \\
+\cos{\theta} =
+\frac{2du\delta u - \frac{1}{2}(du\delta v + dv\delta u) + 4dv\delta v}{\sqrt{2du^2 - dudv + 4dv^2}\cdot\sqrt{2\delta u^2 - \delta u\delta v + 4\delta v^2}} =
+\frac{2du\delta u - \frac{1}{2}(-2du\delta u + 2du\delta u) - 16du\delta u}{\sqrt{2du^2 - 2du^2 + 16du^2}\cdot\sqrt{2\delta u^2 + 2\delta u^2 + 16\delta u^2}} =
+\frac{-14du\delta u}{8\sqrt5du\delta u} = -\frac{7}{4\sqrt5} = -\frac{7\sqrt5}{20}
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\text{Найти угол между координатными линиями поверхности}\
+\begin{cases}
+  x = u(3v^2 - u^2 - \frac{1}{3}) \\
+  y = v(3u^2 - v^2 - \frac{1}{3}) \\
+  z = 2uv
+\end{cases} \\
+E = (3v^2 - u^2 - \frac{1}{3} - 2u^2)^2 + (6vu)^2 + (2v)^2 = 9 u^4 + 18 u^2 v^2 + 2 u^2 + 9 v^4 + 2 v^2 + \frac{1}{9} \\
+F = (3v^2 - u^2 - \frac{1}{3} - 2u^2)(6vu) + (3u^2 - v^2 - \frac{1}{3} - 2v^2)(6vu) + (2v)(2u) = 0 \\
+G = (6vu)^2 + (3u^2 - v^2 - \frac{1}{3} - 2v^2)^2 + (2u)^2 = 9 u^4 + 18 u^2 v^2 + 2 u^2 + 9 v^4 + 2 v^2 + \frac{1}{9} \\
+\cos \theta = \frac{F}{\sqrt{EG}} =
+\frac{36 u^3 v + 36 u v^3}{\sqrt{((9 u^4 + 54 u^2 v^2 - 2 u^2 + 9 v^4 + 2 v^2 + \frac{1}{9})(9 u^4 + 54 u^2 v^2 + 2 u^2 + 9 v^4 - 2 v^2 + \frac{1}{9}))}} \\
+= \frac{4 u^3 v + 4 u v^3}{\sqrt{81u^8 + 972u^6v^2 + u^4(3078v^4 - 2) + 4u^2v^2(243v^4 + 5) + v^4(81v^4 - 2) + 1}} \rightarrow \\
+\theta = \arccos(\frac{4 u^3 v + 4 u v^3}{\sqrt{81u^8 + 972u^6v^2 + u^4(3078v^4 - 2) + 4u^2v^2(243v^4 + 5) + v^4(81v^4 - 2) + 1}})
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\text{Найти уравнения касательной плоскости тора}\
+\vec{r}:
+\begin{cases}
+  x=(7+5\cos u)\cos v \\
+  y=(7+5\cos u)\sin v \\
+  z=5\sin u \\
+\end{cases}
+\text{в точке} M_0(u_0, v_0) \\
+\vec{n}(u, v) = \vec{r}_u'(u, v) \times \vec{r}_v'(u, v) \\
+\vec{r}_u'(u, v):
+\begin{cases}
+  x=-5\sin u\cos v \\
+  y=-5\sin u\sin v \\
+  z=5\cos u \\
+\end{cases} \\
+\vec{r}_v'(u, v):
+\begin{cases}
+  x=-(7+5\cos u)\sin v \\
+  y=(7+5\cos u)\cos v \\
+  z=0 \\
+\end{cases} \\
+\vec{n}(u, v): \\
+\begin{cases}
+  x = -5\cos u(7 + 5\cos u) \cos v \\
+  y = -5\cos u(7 + 5\cos u) \sin v \\
+  z = -5\sin u \cos v (7 + 5\cos u) \cos v - 5\sin u \sin v (7 + 5\cos u) \sin v
+\end{cases} \\
+\begin{cases}
+  x = -5\cos u(7 + 5\cos u) \cos v \\
+  y = -5\cos u(7 + 5\cos u) \sin v \\
+  z = -5\sin u(7 + 5 \cos u)
+\end{cases} \leftrightarrow \\
+\begin{cases}
+  x = \cos u(7 + 5\cos u) \cos v \\
+  y = \cos u(7 + 5\cos u) \sin v \\
+  z = \sin u(7 + 5 \cos u)
+\end{cases} \\
+\text{Тогда уравнение касательной плоскости в точке}\ M_0: \\ \\
+\vec{n}(u_0, v_0) \cdot (\vec{r}(u, v) - \vec{r}(u_0, v_0)) = 0 \\
+\\
+\cos u_0(7 + 5\cos u_0) \cos v_0(x(u, v) - x(u_0, v_0)) + \\
+\cos u_0(7 + 5\cos u_0) \sin v_0(y(u, v) - y(u_0, v_0)) + \\
+\sin u_0(7 + 5 \cos u_0)(z(u, v) - z(u_0, v_0)) = 0 \\
+\\
+\cos u_0(7 + 5\cos u_0) \cos v_0((7+5\cos u)\cos v - (7+5\cos u_0)\cos v_0) + \\
+\cos u_0(7 + 5\cos u_0) \sin v_0((7+5\cos u)\sin v - (7+5\cos u_0)\sin v_0) + \\
+\sin u_0(7 + 5 \cos u_0)(5\sin u - 5\sin u_0) = 0
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\text{Найти уравнения касательной плоскости тора}\
+\begin{cases}
+  x=(7+5\cos u)\cos v \\
+  y=(7+5\cos u)\sin v \\
+  z=5\sin u \\
+\end{cases}
+\text{в точке} M_0(u_0, v_0) \\
+\begin{cases}
+x'_{uv}(u, v) = 5\sin u \sin v \\
+y'_{uv}(u, v) = -5\sin u \cos v \\
+z'_{uv}(u, v) = 0 \\
+\end{cases} \\
+\begin{cases}
+x''_{uv}(u, v) = 5\cos u \cos v \\
+y''_{uv}(u, v) = 5\cos u \sin v \\
+z''_{uv}(u, v) = 0 \\
+\end{cases} \\
+\vec{n} = \vec{r}' \times \vec{r}'' \\
+\begin{cases}
+\end{cases}
+\text{Тогда уравнение касательной плоскости в точке}\ M_0: \\
+x'_{uv}(u_0, v_0)(x - x(u_0, v_0)) +
+y'_{uv}(u_0, v_0)(y - y(u_0, v_0)) +
+z'_{uv}(u_0, v_0)(z - z(u_0, v_0)) = 0 \\
+5\sin u_0 \sin v_0(x - (7+5\cos u_0)\cos v_0) -
+5\sin u_0 \cos v_0(y - (7+5\cos u_0)\sin v_0) +
+0(z - 5\sin u_0) = 0 \\
+5\sin u_0 \sin v_0\ x
+-5\sin u_0 \cos v_0\ y = 5\sin u_0 \sin v_0(7+5\cos u_0)\cos v_0 - 5\sin u_0 \cos v_0(7+5\cos u_0)\sin v_0 \\
+5\sin u_0 \sin v_0\ x - 5\sin u_0 \cos v_0\ y = 0 \\
+\sin u_0 \sin v_0\ x - \sin u_0 \cos v_0\ y = 0 \\
+\\
+\\
+\\
+\\
+\\
+\\
+\text{Построить касательную плоскость гиперболоида}\ x^2 + 2y^2 - 4z^2 = 22\ \text{параллельную плоскости}\ x+y+z=1 \\
+F(x, y, z) = x^2 + 2y^2 - 4z^2 - 22\\
+F'_x(x, y, z) = 2x \\
+F'_y(x, y, z) = 4y \\
+F'_z(x, y, z) = 8z \\
+\text{Касательная плоскость параллельна}\ x + y + z = 1 \leftrightarrow F'(M_0) || \{1, 1, 1\} \leftrightarrow
+\begin{cases}
+  x_0 = 2y_0 = 4z_0 \\
+  x_0^2 + 2y_0^2 - 4z_0^2 - 22
+\end{cases} \\
+\text{Выражаем x и y через z, находим корни:} \\
+x_0 = 2\sqrt{\frac{22}{5}}\\
+y_0 = \sqrt{\frac{22}{5}}\\
+z_0 = \sqrt{\frac{11}{10}}\\
+\text{Тогда уравнение искомой плоскости:} \\
+x + y + z = x_0 + y_0 + z_0 \\
+x + y + z = 2\sqrt{\frac{22}{5}} + \sqrt{\frac{22}{5}} + \sqrt{\frac{11}{10}} \\
+x + y + z = 7\sqrt{\frac{11}{10}} \\
+x + y + z - 7\sqrt{\frac{11}{10}} = 0\\
+\\
+\\
+\\
+\\
+\\
+\text{Найти касательные плоскости поверхности} z=y^4 - 2yx^3, \text{параллельные векторам} (1, 0, 1) \text{и} (2, 2, 1). \\
+F(x, y, z) = y^4 - 2yx^3 - z \\
+F'_x(x, y, z) = -6yx^2 \\
+F'_y(x, y, z) = 4y^3 - 2x^3 \\
+F'_z(x, y, z) = -1 \\
+\text{Касательная плоскость параллельна}\ \vec{a}\ \text{и}\ \vec{b} \leftrightarrow \\
+F'(M)\ ||\ \vec{a} \times \vec{b} \leftrightarrow
+\begin{cases}
+  F'(M) \cdot \vec{a} = 0 \\
+  F'(M) \cdot \vec{b} = 0 \\
+\end{cases}
+\begin{cases}
+  6yx^2 + 1 = 0 \\
+  -12yx^2 + 8y^3 - 4x^3 - 1 = 0 \\
+\end{cases}
+\begin{cases}
+  6yx^2 + 1 = 0 \\
+  8y^3 - 4x^3 + 1 = 0 \\
+\end{cases} \\
+\text{(Несложно заметить, что) Корни:} \\
+x_0 = -\frac{1}{2^{2/3} \left(\frac{3}{-1 + \left(\frac{1}{7 - 4\sqrt{3}}\right)^{1/3} + \left(7 - 4\sqrt{3}\right)^{1/3}}\right)^{1/3}},\\
+y_0 = \frac{\frac{3}{8} \left(1 - \frac{1}{7 - 4\sqrt{3}}^{1/3} - \left(7 - 4\sqrt{3}\right)^{1/3}\right) - \frac{1}{8} \left(1 - \frac{1}{7 - 4\sqrt{3}}^{1/3} - \left(7 - 4\sqrt{3}\right)^{1/3}\right)^2}{2^{2/3} \left(\frac{3}{-1 + \left(\frac{1}{7 - 4\sqrt{3}}\right)^{1/3} + \left(7 - 4\sqrt{3}\right)^{1/3}}\right)^{1/3}} \\
+z_0 = y_0^4 - 4y_0 x_0^3 \\
+\text{Нормаль:}\ \vec{n} = \vec{a} \times \vec{b} = \{-2, 1, 2\} \\
+\text{Тогда уравнение искомой касательной плоскости:}
+-2(x-x_0) + (y-y_0) + 2(z - z_0) = 0 \\
+\\
+\\
+\\
+\\
+\begin{cases}
+  x^2 + y^2 - z^2 = 1 \\
+  x^2 - y^2 - z^2 = 1
+\end{cases}
+\begin{cases}
+  y = 0 \\
+  x^2 - z^2 = 1
+\end{cases} - \text{это уравнение гиперболы} \\ \\
+\vec{r}(t) = \{\frac{e^t + e^{-t}}{2}, 0, \frac{e^t - e^{-t}}{2}\} \\
+\vec{r}'(t) = \{\frac{e^t - e^{-t}}{2}, 0, \frac{e^t + e^{-t}}{2}\} \\
+\vec{r}''(t) = \{\frac{e^t + e^{-t}}{2}, 0, \frac{e^t - e^{-t}}{2}\} \\ \\
+M(1, 0, 0) \rightarrow t = 0 \\
+\vec{r}'(0) = \{0, 0, 1\} - \text{уже нормализован} \\
+\vec{r}''(0) = \{1, 0, 0\} - \text{уже нормализован} \\ \\
+\vec{\tau} = \vec{r}' = \{0, 0, 1\} \\
+\vec{\beta} = \vec{r}' \times \vec{r}'' = \{0, 1, 0\} \\
+\vec{\nu} = \vec{r}' \times (\vec{r}' \times \vec{r}'') = \{1, 0, 0\} \\ \\
+\text{Итого репер Френе:} \\
+\vec{\tau} = \{0, 0, 1\} \\
+\vec{\beta} = \{0, 1, 0\} \\
+\vec{\nu} = \{1, 0, 0\} \\
+\\
+\\
+\text{Квадратичная форма:} \\
+\left(
+  \begin{array}{ccc}
+    4 & -2 & -8 \\
+    -2 & 1 & -1 \\
+    -8 & -1 & 17
+  \end{array}
+\right)
+x =
+\left|
+  \begin{array}{cc}
+    4 & 2 \\
+    -2 & 1
+  \end{array}
+\right| = 1 \rightarrow \text{Не центральная система} \\
+a_{12} \neq 0 \rightarrow \text{Есть поворот} \\
+ctg(2\phi) = \frac{a_{11} - a_{22}}{2a_{12}} \rightarrow \sin\phi = 1, \cos\phi = 1
+$
+
+\end{document}
