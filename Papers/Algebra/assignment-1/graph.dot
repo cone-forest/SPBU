@@ -1,9 +1,18 @@
 digraph Fifth {
-  g -> f;
-  g -> e;
-  g -> a;
-  f -> e;
-  e -> a;
-  e -> d;
-  c -> b;
+  rankdir="LR";
+
+  node [style=filled, fillcolor="#A2E4B8"];
+
+  q [label= "", shape=none, height=.0, width=.0];
+  q6 [shape=doublecircle];
+
+  q -> q0;
+  q0 -> q1 [label="%"];
+  q1 -> q2 [label="+"];
+  q2 -> q3 [label="x"];
+  q3 -> q4 [label="+"];
+  q4 -> q5 [label="?"];
+  q4 -> q6 [label="%"];
+  q4 -> q2 [label="+"];
+  q5 -> q4 [label="?"];
 }
